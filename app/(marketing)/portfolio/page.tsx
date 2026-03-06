@@ -6,9 +6,25 @@ import Link from 'next/link'
 import portfolioData from '@/content/portfolio.json'
 import { PortfolioProject } from '@/types'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'View our portfolio of successful projects in web development, mobile apps, and networking',
+  description: 'View our portfolio of successful projects in web development, mobile apps, and networking. See our work and client success stories.',
+  keywords: ['Arisotech portfolio', 'web development projects', 'mobile app projects', 'case studies', 'client work'],
+  openGraph: {
+    title: 'Portfolio | Arisotech',
+    description: 'View our portfolio of successful projects in web development, mobile apps, and networking.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio | Arisotech',
+    description: 'View our portfolio of successful projects in web development, mobile apps, and networking.',
+  },
+  alternates: {
+    canonical: 'https://arisotech.com/portfolio/',
+  },
 }
 
 export default function PortfolioPage() {

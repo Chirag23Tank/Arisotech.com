@@ -3,9 +3,25 @@ import { Calendar, Clock } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { format } from 'date-fns'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Latest articles and insights from Arisotech',
+  description: 'Latest articles and insights from Arisotech on web development, mobile apps, networking, and technology trends.',
+  keywords: ['tech blog', 'web development blog', 'mobile app development blog', 'technology insights', 'software development articles'],
+  openGraph: {
+    title: 'Blog | Arisotech',
+    description: 'Latest articles and insights from Arisotech on web development, mobile apps, and technology.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Arisotech',
+    description: 'Latest articles and insights from Arisotech.',
+  },
+  alternates: {
+    canonical: 'https://arisotech.com/blog/',
+  },
 }
 
 // Mock blog posts - you can replace this with actual blog data later

@@ -9,9 +9,24 @@ import FAQ from '@/components/sections/FAQ'
 import CTA from '@/components/sections/CTA'
 import siteConfig from '@/content/site-config.json'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'Home',
   description: siteConfig.description,
+  openGraph: {
+    title: `${siteConfig.siteName} - ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.siteName} - ${siteConfig.tagline}`,
+    description: siteConfig.description,
+  },
+  alternates: {
+    canonical: 'https://arisotech.com',
+  },
 }
 
 export default function HomePage() {

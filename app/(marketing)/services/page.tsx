@@ -6,9 +6,25 @@ import Link from 'next/link'
 import servicesData from '@/content/services.json'
 import { Service } from '@/types'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Our comprehensive services: Web Development, Mobile Apps, and Networking Solutions',
+  description: 'Our comprehensive services: Web Development, React Native Mobile Apps, and Networking Solutions. Custom software development services in Jaipur, Rajasthan.',
+  keywords: ['web development services', 'mobile app development', 'React Native development', 'networking solutions', 'custom software development', 'Jaipur'],
+  openGraph: {
+    title: 'Services | Arisotech',
+    description: 'Our comprehensive services: Web Development, Mobile Apps, and Networking Solutions.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Services | Arisotech',
+    description: 'Our comprehensive services: Web Development, Mobile Apps, and Networking Solutions.',
+  },
+  alternates: {
+    canonical: 'https://arisotech.com/services/',
+  },
 }
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -55,8 +71,8 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
-                    <Button className="w-full">Get Started</Button>
+                  <Link href={`/services/${service.id}`}>
+                    <Button className="w-full">Learn More</Button>
                   </Link>
                 </CardContent>
               </Card>

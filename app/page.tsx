@@ -8,6 +8,8 @@ import FAQ from '@/components/sections/FAQ'
 import CTA from '@/components/sections/CTA'
 import siteConfig from '@/content/site-config.json'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'Home',
   description: siteConfig.description,

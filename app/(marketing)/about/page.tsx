@@ -6,9 +6,25 @@ import siteConfig from '@/content/site-config.json'
 import teamData from '@/content/team.json'
 import { TeamMember } from '@/types'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn more about Arisotech and our team of experts',
+  description: 'Learn more about Arisotech and our team of experts in web development, mobile apps, and networking solutions based in Jaipur, Rajasthan.',
+  keywords: ['about Arisotech', 'web development team', 'mobile app developers', 'Jaipur software company', 'Rajasthan tech company'],
+  openGraph: {
+    title: 'About Us | Arisotech',
+    description: 'Learn more about Arisotech and our team of experts in web development, mobile apps, and networking solutions.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Arisotech',
+    description: 'Learn more about Arisotech and our team of experts.',
+  },
+  alternates: {
+    canonical: 'https://arisotech.com/about/',
+  },
 }
 
 export default function AboutPage() {

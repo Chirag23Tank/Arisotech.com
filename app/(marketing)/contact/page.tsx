@@ -3,9 +3,25 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import ContactForm from '@/components/forms/ContactForm'
 import siteConfig from '@/content/site-config.json'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with Arisotech for your next project',
+  description: 'Get in touch with Arisotech for your next project. Contact us for web development, mobile apps, and networking solutions in Jaipur, Rajasthan.',
+  keywords: ['contact Arisotech', 'web development contact', 'mobile app development contact', 'Jaipur software company contact'],
+  openGraph: {
+    title: 'Contact Us | Arisotech',
+    description: 'Get in touch with Arisotech for your next project. We\'d love to hear from you.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Arisotech',
+    description: 'Get in touch with Arisotech for your next project.',
+  },
+  alternates: {
+    canonical: 'https://arisotech.com/contact/',
+  },
 }
 
 export default function ContactPage() {

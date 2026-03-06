@@ -1,11 +1,36 @@
+export interface ProcessStep {
+  step: number
+  title: string
+  description: string
+}
+
+export interface PricingTier {
+  name: string
+  price: string
+  description: string
+  features: string[]
+  popular?: boolean
+}
+
+export interface FAQ {
+  question: string
+  answer: string
+}
+
 export interface Service {
   id: string
   title: string
   shortDescription: string
   description: string
+  detailedDescription?: string
   icon: string
   features: string[]
   order: number
+  process?: ProcessStep[]
+  pricingTiers?: PricingTier[]
+  faqs?: FAQ[]
+  relatedProjects?: string[]
+  technologies?: string[]
 }
 
 export interface PortfolioProject {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(255),
@@ -26,6 +27,8 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const formRef = useRef<HTMLFormElement>(null)
+  const lastSubmitTime = useRef<number>(0)
 
   const {
     register,
@@ -37,42 +40,119 @@ export default function ContactForm() {
   })
 
   const onSubmit = async (data: ContactFormData) => {
+    // Client-side rate limiting (5 seconds between submissions)
+    const now = Date.now()
+    if (now - lastSubmitTime.current < 5000) {
+      setSubmitStatus('error')
+      setErrorMessage('Please wait a few seconds before submitting again.')
+      return
+    }
+    lastSubmitTime.current = now
+
+    // Honeypot spam protection - check if honeypot field is filled
+    if (formRef.current) {
+      const honeypot = formRef.current.querySelector<HTMLInputElement>('input[name="website"]')
+      if (honeypot && honeypot.value) {
+        // Bot detected - silently fail
+        setSubmitStatus('success')
+        reset()
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+        return
+      }
+    }
+
     setIsSubmitting(true)
     setSubmitStatus('idle')
     setErrorMessage('')
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...data,
-          source: window.location.pathname,
-        }),
-      })
+      // Additional validation: Check for suspicious patterns
+      const suspiciousPatterns = [
+        /http[s]?:\/\//i, // URLs
+        /<script/i, // Script tags
+        /javascript:/i, // JavaScript protocol
+      ]
 
-      const result = await response.json()
+      const hasSuspiciousContent = suspiciousPatterns.some(pattern => 
+        pattern.test(data.message) || pattern.test(data.name) || pattern.test(data.email)
+      )
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit form')
+      if (hasSuspiciousContent) {
+        throw new Error('Invalid content detected. Please check your submission.')
       }
 
+      // Create Supabase client
+      const supabase = createClient()
+
+      // Insert data into Supabase
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: data.name.trim(),
+            email: data.email.trim().toLowerCase(),
+            phone: data.phone?.trim() || null,
+            company_name: data.companyName?.trim() || null,
+            service_type: data.serviceType,
+            message: data.message.trim(),
+            budget_range: data.budgetRange || null,
+            timeline: data.timeline || null,
+            source: typeof window !== 'undefined' ? window.location.pathname : 'website',
+            user_agent: typeof window !== 'undefined' ? navigator.userAgent : null,
+            created_at: new Date().toISOString(),
+          },
+        ])
+
+      if (error) {
+        console.error('Supabase error:', error)
+        
+        // Handle specific error cases
+        if (error.code === '23505') { // Unique constraint violation
+          throw new Error('You have already submitted this form. Please wait before submitting again.')
+        } else if (error.code === 'PGRST116') { // Rate limit (if configured)
+          throw new Error('Too many submissions. Please try again later.')
+        } else if (error.message.includes('rate limit') || error.message.includes('Rate limit')) {
+          throw new Error('Rate limit exceeded. Please try again later.')
+        } else {
+          throw new Error(error.message || 'Failed to save submission. Please try again.')
+        }
+      }
+
+      // Success
       setSubmitStatus('success')
       reset()
+      
+      // Optional: Track successful submission (analytics)
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submission', {
+          event_category: 'Contact',
+          event_label: data.serviceType,
+        })
+      }
+
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred')
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {/* Honeypot field for spam protection - hidden from users */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        style={{ position: 'absolute', left: '-9999px' }}
+        aria-hidden="true"
+      />
+
       {submitStatus === 'success' && (
         <div className="rounded-lg bg-green-50 border border-green-200 p-4 flex items-center gap-3">
           <CheckCircle2 className="h-5 w-5 text-green-600" />
