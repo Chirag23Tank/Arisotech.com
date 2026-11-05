@@ -23,7 +23,11 @@
       "PowerShell(Start-Process -WindowStyle Hidden -FilePath \"npx.cmd\" -ArgumentList \"--yes\",\"serve\",\"out\",\"-l\",\"4321\"; Start-Sleep 6; \\(Invoke-WebRequest http://localhost:4321/ -UseBasicParsing\\).StatusCode)",
       "mcp__plugin_playwright_playwright__browser_evaluate",
       "mcp__plugin_playwright_playwright__browser_click",
-      "PowerShell(npx next build 2>&1 | Select-String \"Compiled|rror|21/21\"; npx eslint . ; \"lint exit: $LASTEXITCODE\")"
+      "PowerShell(npx next build 2>&1 | Select-String \"Compiled|rror|21/21\"; npx eslint . ; \"lint exit: $LASTEXITCODE\")",
+      "PowerShell(git log --oneline -3; Start-Process -WindowStyle Hidden -FilePath \"npx.cmd\" -ArgumentList \"--yes\",\"serve\",\"out\",\"-l\",\"4321\"; Start-Sleep 6; \\(Invoke-WebRequest http://localhost:4321/pricing/ -UseBasicParsing\\).StatusCode)",
+      "PowerShell(Get-ChildItem out -Directory -Name; \"---size MB\"; [math]::Round\\(\\(\\(Get-ChildItem out -Recurse -File | Measure-Object Length -Sum\\).Sum / 1MB\\), 1\\); foreach \\($d in \"cache\",\"server\",\"types\",\"static\"\\) { if \\(Test-Path \"out\\\\$d\"\\) { \"$d : \" + [math]::Round\\(\\(\\(Get-ChildItem \"out\\\\$d\" -Recurse -File | Measure-Object Length -Sum\\).Sum / 1MB\\), 1\\) + \" MB\" } })",
+      "PowerShell(Get-ChildItem out -Directory | ForEach-Object { \"{0,-14} {1,8} MB\" -f $_.Name, [math]::Round\\(\\(\\(Get-ChildItem $_.FullName -Recurse -File | Measure-Object Length -Sum\\).Sum / 1MB\\), 1\\) }; \"---_next\"; Get-ChildItem out\\\\_next -Directory | ForEach-Object { \"{0,-14} {1,8} MB\" -f $_.Name, [math]::Round\\(\\(\\(Get-ChildItem $_.FullName -Recurse -File | Measure-Object Length -Sum\\).Sum / 1MB\\), 1\\) }; \"---dev\"; Get-ChildItem out\\\\dev -Name | Select-Object -First 10)",
+      "PowerShell(Start-Process -WindowStyle Hidden -FilePath \"npx.cmd\" -ArgumentList \"--yes\",\"serve\",\"out\",\"-l\",\"4322\"; Start-Sleep 6; \\(Invoke-WebRequest http://localhost:4322/ -UseBasicParsing\\).StatusCode)"
     ]
   }
 }
