@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npx next build 2>&1)",
+      "PowerShell(npx eslint . 2>&1)",
+      "PowerShell($h = Get-Content out\\\\index.html -Raw; \"ClientLogos present: \" + \\($h -match 'Trusted by leading companies'\\); \"og-image in public: \" + \\(Test-Path public\\\\og-image.jpg\\); \"logo in public: \" + \\(Test-Path public\\\\logo.png\\); Select-String -Path out\\\\about\\\\index.html -Pattern 'anshuman' -Quiet; git check-ignore -v out .env; Get-Content .gitignore | Select-String 'env|out')",
+      "WebFetch(domain:www.keka.com)",
+      "PowerShell(git switch -c hrms-redesign)",
+      "PowerShell(git rm -q -r cls app/page.tsx \"app/\\(marketing\\)/services\" \"app/\\(marketing\\)/portfolio\" components/sections content/services.json content/portfolio.json content/testimonials.json public/images/portfolio public/file.svg public/globe.svg public/next.svg public/vercel.svg public/window.svg components/ui/select.tsx)",
+      "PowerShell(git rm -q components/ui/card.tsx components/ui/input.tsx components/ui/textarea.tsx lib/supabase/server.ts lib/supabase/admin.ts; npm uninstall framer-motion date-fns 2>&1 | Select-Object -Last 2; npx eslint . ; \"lint exit: $LASTEXITCODE\")",
+      "PowerShell(npx next build 2>&1 | Select-String \"Compiled|error|Error\" ; Start-Process -WindowStyle Hidden -FilePath \"npx.cmd\" -ArgumentList \"--yes\",\"serve\",\"out\",\"-l\",\"4321\"; Start-Sleep 8; \\(Invoke-WebRequest http://localhost:4321/ -UseBasicParsing\\).StatusCode)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "PowerShell(Get-ChildItem \"app\\\\\\(marketing\\)\" -Name; foreach \\($d in Get-ChildItem \"app\\\\\\(marketing\\)\"\\) { git mv \"app/\\(marketing\\)/$\\($d.Name\\)\" \"app/$\\($d.Name\\)\" 2>&1 }; if \\(Test-Path \"app\\\\\\(marketing\\)\"\\) { Get-ChildItem \"app\\\\\\(marketing\\)\" -Recurse -Name; Remove-Item \"app\\\\\\(marketing\\)\" -Recurse }; Get-ChildItem app -Name)",
+      "PowerShell(npx next build 2>&1 | Select-String \"Compiled|rror|Generating static pages using 15 workers \\\\\\(2\"; npx eslint . ; \"lint exit: $LASTEXITCODE\"; Get-ChildItem out\\\\pricing -Name)",
+      "PowerShell(git reset -q .claude)",
+      "PowerShell(npm install framer-motion@12 lenis@1 2>&1)",
+      "PowerShell(node -e \"console.log\\(require\\('lenis/package.json'\\).version, require\\('framer-motion/package.json'\\).version\\)\")",
+      "PowerShell(npx next build 2>&1 | Select-String \"Compiled|rror|21/21|Type\" ; npx eslint . ; \"lint exit: $LASTEXITCODE\")",
+      "PowerShell(Start-Process -WindowStyle Hidden -FilePath \"npx.cmd\" -ArgumentList \"--yes\",\"serve\",\"out\",\"-l\",\"4321\"; Start-Sleep 6; \\(Invoke-WebRequest http://localhost:4321/ -UseBasicParsing\\).StatusCode)",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "PowerShell(npx next build 2>&1 | Select-String \"Compiled|rror|21/21\"; npx eslint . ; \"lint exit: $LASTEXITCODE\")"
+    ]
+  }
+}

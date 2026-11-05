@@ -1,15 +1,19 @@
 {
   "siteName": "Arisotech",
-  "tagline": "Modern Web & Mobile Solutions",
-  "description": "We provide cutting-edge web development, React Native mobile apps, and networking solutions for businesses looking to grow.",
+  "productName": "Arisotech HRMS",
+  "tagline": "HR and payroll software for growing Indian companies",
+  "description": "Arisotech HRMS keeps employee records, attendance, leave, payroll and statutory compliance in one system, so payday numbers are right the first time.",
   "email": "info@arisotech.com",
-  "phone": "+91 6367583182 , +91 89490 79430",
-  "address": "Jaipur, Rajasthan – 302012",
+  "phones": [
+    { "display": "+91 63675 83182", "tel": "+916367583182" },
+    { "display": "+91 89490 79430", "tel": "+918949079430" }
+  ],
+  "whatsapp": "918949079430",
+  "address": "Jaipur, Rajasthan 302012",
   "socialMedia": {
     "linkedin": "https://linkedin.com/company/arisotech",
     "twitter": "https://twitter.com/arisotech",
-    "github": "https://github.com/arisotech",
+    "github": "",
     "facebook": "https://facebook.com/arisotech"
   }
 }
-

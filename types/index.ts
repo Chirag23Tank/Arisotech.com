@@ -1,62 +1,43 @@
-export interface ProcessStep {
-  step: number
-  title: string
-  description: string
-}
-
-export interface PricingTier {
-  name: string
-  price: string
-  description: string
-  features: string[]
-  popular?: boolean
-}
-
 export interface FAQ {
   question: string
   answer: string
 }
 
-export interface Service {
-  id: string
+export interface ModuleCapability {
   title: string
-  shortDescription: string
-  description: string
-  detailedDescription?: string
-  icon: string
-  features: string[]
-  order: number
-  process?: ProcessStep[]
-  pricingTiers?: PricingTier[]
-  faqs?: FAQ[]
-  relatedProjects?: string[]
-  technologies?: string[]
+  text: string
 }
 
-export interface PortfolioProject {
-  id: string
+export interface ModuleStep {
   title: string
-  description: string
-  fullDescription?: string
-  category: 'web' | 'mobile' | 'networking' | 'fullstack'
-  technologies: string[]
-  image?: string
-  imageUrl?: string
-  liveUrl?: string
-  githubUrl?: string
-  featured: boolean
-  order: number
+  text: string
 }
 
-export interface Testimonial {
+export interface ModuleGroup {
   id: string
-  clientName: string
-  clientCompany?: string
-  clientRole?: string
-  testimonial: string
-  rating?: number
-  featured: boolean
-  order: number
+  name: string
+}
+
+export interface ProductModule {
+  slug: string
+  name: string
+  group: string
+  summary: string
+  headline: string
+  intro: string
+  capabilities: ModuleCapability[]
+  workflow: ModuleStep[]
+  faqs: FAQ[]
+}
+
+export interface PricingPlan {
+  id: string
+  name: string
+  pricePerEmployee: number | null
+  for: string
+  includes: string[]
+  cta: string
+  highlight: boolean
 }
 
 export interface TeamMember {
@@ -70,31 +51,3 @@ export interface TeamMember {
   github?: string
   order: number
 }
-
-export interface SiteConfig {
-  siteName: string
-  tagline: string
-  description: string
-  email: string
-  phone?: string
-  address?: string
-  socialMedia: {
-    linkedin?: string
-    twitter?: string
-    github?: string
-    facebook?: string
-  }
-}
-
-export interface ContactFormData {
-  name: string
-  email: string
-  phone?: string
-  companyName?: string
-  serviceType: 'web-development' | 'mobile-apps' | 'networking' | 'consulting' | 'other'
-  message: string
-  budgetRange?: 'under-10k' | '10k-25k' | '25k-50k' | '50k-100k' | '100k-plus' | 'not-sure'
-  timeline?: 'asap' | '1-3-months' | '3-6-months' | '6-plus-months'
-  source?: string
-}
-

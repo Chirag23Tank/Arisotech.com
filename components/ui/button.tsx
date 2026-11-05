@@ -1,35 +1,59 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import * as React from 'react'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost' | 'link'
-  size?: 'default' | 'sm' | 'lg'
+type Variant = 'primary' | 'secondary' | 'ghost' | 'inverse'
+type Size = 'sm' | 'md' | 'lg'
+
+const base =
+  'inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors disabled:pointer-events-none disabled:opacity-60'
+
+const variants: Record<Variant, string> = {
+  primary: 'bg-brand text-white hover:bg-brand-strong',
+  secondary: 'border border-line-strong bg-surface text-ink hover:border-ink',
+  ghost: 'text-ink hover:bg-ink/5',
+  inverse: 'bg-white text-ink hover:bg-brand-wash',
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
-    return (
-      <button
-        className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-          {
-            "bg-blue-600 text-white hover:bg-blue-700": variant === 'default',
-            "border border-gray-300 bg-transparent hover:bg-gray-50": variant === 'outline',
-            "hover:bg-gray-100": variant === 'ghost',
-            "text-blue-600 underline-offset-4 hover:underline": variant === 'link',
-            "h-10 px-4 py-2": size === 'default',
-            "h-9 px-3 text-sm": size === 'sm',
-            "h-11 px-8": size === 'lg',
-          },
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
+const sizes: Record<Size, string> = {
+  sm: 'h-9 px-3.5 text-sm',
+  md: 'h-11 px-5 text-[0.95rem]',
+  lg: 'h-12 px-6 text-base',
+}
+
+export function buttonClasses(variant: Variant = 'primary', size: Size = 'md', className?: string) {
+  return cn(base, variants[variant], sizes[size], className)
+}
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: Variant
+  size?: Size
+}
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'primary', size = 'md', ...props }, ref) => (
+    <button ref={ref} className={buttonClasses(variant, size, className)} {...props} />
+  )
 )
-Button.displayName = "Button"
+Button.displayName = 'Button'
 
-export { Button }
-
+/** A link styled as a button. Avoids nesting <button> inside <a>. */
+export function ButtonLink({
+  href,
+  variant = 'primary',
+  size = 'md',
+  className,
+  children,
+}: {
+  href: string
+  variant?: Variant
+  size?: Size
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <Link href={href} className={buttonClasses(variant, size, className)}>
+      {children}
+    </Link>
+  )
+}

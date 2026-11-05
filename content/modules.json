@@ -1,0 +1,206 @@
+{
+  "groups": [
+    { "id": "people", "name": "People" },
+    { "id": "pay", "name": "Payroll & money" },
+    { "id": "time", "name": "Time" },
+    { "id": "talent", "name": "Talent" }
+  ],
+  "modules": [
+    {
+      "slug": "core-hr",
+      "name": "Core HR",
+      "group": "people",
+      "summary": "One record per employee, from offer letter to exit.",
+      "headline": "Every employee record in one place, always current",
+      "intro": "Profiles, documents, reporting lines and job history live in a single record that payroll, attendance and leave all read from. Change a designation once and every module sees it.",
+      "capabilities": [
+        { "title": "Employee profiles", "text": "Personal, job, bank and statutory details (PAN, UAN, ESIC number) with field-level access control." },
+        { "title": "Org chart", "text": "Reporting lines, departments, locations and cost centres that update as people move." },
+        { "title": "Document vault", "text": "Offer letters, ID proofs and policies stored against each employee, with expiry reminders." },
+        { "title": "Onboarding checklists", "text": "Tasks for HR, IT and managers that start the day an offer is accepted." },
+        { "title": "Exit management", "text": "Resignation approval, notice period tracking, clearances and full-and-final settlement." },
+        { "title": "Letters and templates", "text": "Generate appointment, increment and experience letters from templates with merge fields." }
+      ],
+      "workflow": [
+        { "title": "Offer accepted", "text": "The candidate becomes an employee record with a joining date." },
+        { "title": "Joining day", "text": "Checklists go out to IT, admin and the reporting manager." },
+        { "title": "During employment", "text": "Transfers, promotions and salary revisions are logged with effective dates." },
+        { "title": "Exit", "text": "Clearances and final settlement run from the same record." }
+      ],
+      "faqs": [
+        { "question": "Can we import our existing employee data?", "answer": "Yes. You can upload a spreadsheet using our template, and our onboarding team checks it with you before go-live." },
+        { "question": "Who can see salary and bank details?", "answer": "You decide. Access is set by role, so a manager can see their team's attendance without seeing anyone's salary." }
+      ]
+    },
+    {
+      "slug": "payroll",
+      "name": "Payroll",
+      "group": "pay",
+      "summary": "Monthly payroll with PF, ESI, PT and TDS worked out for you.",
+      "headline": "Run payroll in an afternoon, with compliance already done",
+      "intro": "Attendance, leave and reimbursements flow into payroll automatically. Statutory deductions are calculated as you run it, and payslips and challans are ready the moment you lock the month.",
+      "capabilities": [
+        { "title": "Flexible salary structures", "text": "Define CTC components, allowances and formulas once and apply them by grade or location." },
+        { "title": "Statutory deductions", "text": "PF, ESI, professional tax, labour welfare fund and TDS calculated per state rules." },
+        { "title": "Income tax declarations", "text": "Employees declare investments and upload proofs; TDS adjusts for the rest of the year." },
+        { "title": "Payslips", "text": "Branded payslips published to the employee app with a notification on payday." },
+        { "title": "Bank transfer files", "text": "Download salary transfer files in your bank's format, ready to upload." },
+        { "title": "Reports and challans", "text": "PF ECR, ESI, PT and Form 16 data generated from the same run." }
+      ],
+      "workflow": [
+        { "title": "Inputs sync", "text": "Attendance, LOP days, overtime and approved claims are pulled in." },
+        { "title": "Review", "text": "Compare with last month and see every change explained line by line." },
+        { "title": "Lock the month", "text": "Payslips publish and bank files are generated." },
+        { "title": "File", "text": "Statutory reports are ready for upload to the government portals." }
+      ],
+      "faqs": [
+        { "question": "Do you handle arrears and mid-month joiners?", "answer": "Yes. Pro-rated salaries, arrears from back-dated revisions and loss of pay are handled in the regular run." },
+        { "question": "Can we run payroll for more than one company?", "answer": "Yes. Multiple legal entities can be managed from one account, each with its own statutory settings." },
+        { "question": "Is full-and-final settlement included?", "answer": "Yes. Leave encashment, gratuity, notice recovery and pending reimbursements are calculated in the settlement." }
+      ]
+    },
+    {
+      "slug": "attendance",
+      "name": "Attendance",
+      "group": "time",
+      "summary": "Clock-ins from web, mobile or biometric devices, with shifts and overtime.",
+      "headline": "Attendance that lands in payroll without a spreadsheet",
+      "intro": "Employees clock in from the app, the web or your existing biometric device. Shifts, late marks and overtime rules are applied as the day happens, so month-end is a review, not a reconstruction.",
+      "capabilities": [
+        { "title": "Mobile clock-in", "text": "Geo-fenced and selfie-based clock-in for field and remote teams." },
+        { "title": "Biometric sync", "text": "Pull punches from supported biometric devices on a schedule." },
+        { "title": "Shifts and rosters", "text": "Fixed, rotating and night shifts with weekly-off patterns per team." },
+        { "title": "Rules engine", "text": "Grace periods, late marks, half days and overtime calculated automatically." },
+        { "title": "Regularisation", "text": "Employees request corrections for missed punches; managers approve in one tap." }
+      ],
+      "workflow": [
+        { "title": "Clock in", "text": "From phone, browser or device." },
+        { "title": "Rules apply", "text": "Late marks, half days and overtime are calculated." },
+        { "title": "Corrections", "text": "Missed punches are regularised with manager approval." },
+        { "title": "Month close", "text": "Payable days are sent to payroll." }
+      ],
+      "faqs": [
+        { "question": "Which biometric devices are supported?", "answer": "Most common devices that can export punch data are supported. Tell us your model during the demo and we will confirm." },
+        { "question": "Does mobile clock-in work offline?", "answer": "Punches are stored on the phone and synced when the connection returns, with the original time preserved." }
+      ]
+    },
+    {
+      "slug": "leave",
+      "name": "Leave",
+      "group": "time",
+      "summary": "Leave policies, balances and approvals that follow your rules.",
+      "headline": "Leave policies your team can read and the system enforces",
+      "intro": "Set up casual, sick, earned and any other leave type with accrual, carry-forward and encashment rules. Employees see their balance before they apply, and managers approve from the app.",
+      "capabilities": [
+        { "title": "Policy builder", "text": "Accrual monthly or yearly, carry-forward caps, probation rules and sandwich rules." },
+        { "title": "Holiday calendars", "text": "Separate calendars by location, including optional holidays." },
+        { "title": "Approvals", "text": "Single or multi-level approval with delegation when a manager is away." },
+        { "title": "Team calendar", "text": "Managers see who is away before approving a request." },
+        { "title": "Encashment", "text": "Encashable leave flows into payroll or full-and-final settlement." }
+      ],
+      "workflow": [
+        { "title": "Apply", "text": "Employee picks dates and sees the balance after the request." },
+        { "title": "Approve", "text": "Manager checks the team calendar and approves." },
+        { "title": "Balance updates", "text": "Accruals and deductions apply immediately." },
+        { "title": "Payroll", "text": "Loss of pay days reach payroll without re-entry." }
+      ],
+      "faqs": [
+        { "question": "Can different teams have different leave policies?", "answer": "Yes. Policies can be assigned by location, department, grade or employment type." }
+      ]
+    },
+    {
+      "slug": "expenses",
+      "name": "Expenses",
+      "group": "pay",
+      "summary": "Reimbursement claims with receipts, limits and approvals.",
+      "headline": "Reimbursements paid with salary, not chased over email",
+      "intro": "Employees photograph a receipt and submit a claim. Limits by category and grade are checked automatically, and approved claims are added to the next payroll.",
+      "capabilities": [
+        { "title": "Receipt capture", "text": "Snap a bill from the app and attach it to a claim." },
+        { "title": "Category limits", "text": "Travel, food, fuel and other categories with limits by grade." },
+        { "title": "Advances", "text": "Request a travel advance and settle it against claims later." },
+        { "title": "Paid through payroll", "text": "Approved claims are added to the next salary run." }
+      ],
+      "workflow": [
+        { "title": "Submit", "text": "Employee adds the receipt and category." },
+        { "title": "Check", "text": "Limits and duplicates are flagged before approval." },
+        { "title": "Approve", "text": "Manager and finance approve in turn." },
+        { "title": "Reimburse", "text": "The amount appears on the next payslip." }
+      ],
+      "faqs": [
+        { "question": "Can finance approve after the manager?", "answer": "Yes. Approval chains can include as many steps as your policy needs." }
+      ]
+    },
+    {
+      "slug": "recruitment",
+      "name": "Recruitment",
+      "group": "talent",
+      "summary": "Job openings, candidate pipelines and offers.",
+      "headline": "Hire from one pipeline instead of five inboxes",
+      "intro": "Publish openings, collect applications and move candidates through interview stages your team agrees on. When someone accepts an offer, they become an employee record without retyping anything.",
+      "capabilities": [
+        { "title": "Job openings", "text": "Create openings with approval from the hiring manager and finance." },
+        { "title": "Careers page", "text": "A careers page on your domain that lists open roles." },
+        { "title": "Pipeline stages", "text": "Drag candidates through screening, interviews and offer." },
+        { "title": "Interview feedback", "text": "Scorecards from each interviewer collected in one place." },
+        { "title": "Offer letters", "text": "Generate offers from templates and track acceptance." }
+      ],
+      "workflow": [
+        { "title": "Open a role", "text": "Hiring manager raises a request." },
+        { "title": "Source", "text": "Applications arrive from the careers page and referrals." },
+        { "title": "Interview", "text": "Panels submit scorecards after each round." },
+        { "title": "Offer", "text": "Accepted offers create the employee record." }
+      ],
+      "faqs": [
+        { "question": "Can interviewers give feedback without an HR login?", "answer": "Yes. Interviewers get a link to the candidate and the scorecard for their round." }
+      ]
+    },
+    {
+      "slug": "performance",
+      "name": "Performance",
+      "group": "talent",
+      "summary": "Goals, check-ins and review cycles.",
+      "headline": "Reviews built on goals people actually tracked",
+      "intro": "Set goals at the start of a cycle, update progress through the year, and run reviews that draw on that record rather than on memory.",
+      "capabilities": [
+        { "title": "Goals and OKRs", "text": "Company, team and individual goals that roll up." },
+        { "title": "Check-ins", "text": "Regular one-on-one notes between managers and reports." },
+        { "title": "Review cycles", "text": "Self, manager and peer reviews on your schedule." },
+        { "title": "Calibration", "text": "Compare ratings across teams before they are final." },
+        { "title": "Increments", "text": "Approved revisions flow into payroll with an effective date." }
+      ],
+      "workflow": [
+        { "title": "Set goals", "text": "At the start of the cycle." },
+        { "title": "Check in", "text": "Progress and notes through the year." },
+        { "title": "Review", "text": "Self, manager and peer feedback." },
+        { "title": "Revise pay", "text": "Increments reach payroll." }
+      ],
+      "faqs": [
+        { "question": "Can we use our own rating scale?", "answer": "Yes. Rating scales, competencies and review questions are configurable for each cycle." }
+      ]
+    },
+    {
+      "slug": "self-service",
+      "name": "Employee app",
+      "group": "people",
+      "summary": "Payslips, leave and clock-in on every employee's phone.",
+      "headline": "Answers employees can find themselves",
+      "intro": "The employee app on Android and iOS lets people clock in, apply for leave, download payslips and submit tax declarations, which takes most routine questions off HR's desk.",
+      "capabilities": [
+        { "title": "Payslips and Form 16", "text": "Download any month's payslip or the annual Form 16." },
+        { "title": "Leave and attendance", "text": "Apply for leave, check balances and regularise punches." },
+        { "title": "Tax declarations", "text": "Declare investments and upload proofs from the phone." },
+        { "title": "Company directory", "text": "Find colleagues, their team and how to reach them." },
+        { "title": "Announcements", "text": "Policy updates and notices sent to everyone or one team." }
+      ],
+      "workflow": [
+        { "title": "Invite", "text": "Employees get a login link by email or SMS." },
+        { "title": "Sign in", "text": "On the app or the web." },
+        { "title": "Self-serve", "text": "Leave, payslips and declarations without asking HR." }
+      ],
+      "faqs": [
+        { "question": "Does the app work in regional languages?", "answer": "Tell us which languages your workforce needs during the demo and we will share what is available." }
+      ]
+    }
+  ]
+}
