@@ -15,7 +15,7 @@ A modern, professional website for Arisotech built with Next.js 14, TypeScript, 
 ## Pages
 
 - **Home** - Hero section, services overview, portfolio showcase, testimonials
-- **Services** - Detailed service offerings
+- **Services** - Detailed service offering
 - **Portfolio** - Project showcase
 - **About** - Company information and team
 - **Blog** - Blog posts (coming soon)
