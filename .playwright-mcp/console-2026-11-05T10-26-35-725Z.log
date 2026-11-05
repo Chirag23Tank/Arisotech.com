@@ -1,0 +1,3 @@
+[     233ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4321/pricing/__next.pricing.__PAGE__.txt?_rsc=j2zzi:0
+[     237ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4321/contact/__next.contact.__PAGE__.txt?_rsc=oeqd0:0
+[     244ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4321/features/__next.features.__PAGE__.txt?_rsc=1iih3:0

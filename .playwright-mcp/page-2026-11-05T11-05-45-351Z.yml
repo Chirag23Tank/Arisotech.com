@@ -1,0 +1,746 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: Switching from spreadsheets? Data migration and payroll setup are included with yearly plans.
+    - link "Book a free setup call" [ref=e6] [cursor=pointer]:
+      - /url: /contact/
+  - banner [ref=e7]:
+    - navigation "Main" [ref=e9]:
+      - link "Arisotech home" [ref=e10] [cursor=pointer]:
+        - /url: /
+        - text: Arisotech
+      - generic [ref=e11]:
+        - button "Product" [ref=e12]
+        - link "Pricing" [ref=e15] [cursor=pointer]:
+          - /url: /pricing/
+        - link "Solutions" [ref=e16] [cursor=pointer]:
+          - /url: /solutions/
+        - link "Resources" [ref=e17] [cursor=pointer]:
+          - /url: /blog/
+        - link "About" [ref=e18] [cursor=pointer]:
+          - /url: /about/
+      - generic [ref=e19]:
+        - link "Talk to sales" [ref=e20] [cursor=pointer]:
+          - /url: /contact/?type=sales
+        - link "Book a demo" [ref=e21] [cursor=pointer]:
+          - /url: /contact/
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - heading [level=1] [ref=e25]:
+          - generic "Payday, without the month-end scramble." [ref=e26]:
+            - generic [aria-hidden] [ref=e27]: Payday,
+            - generic [aria-hidden] [ref=e28]: without
+            - generic [aria-hidden] [ref=e29]: the
+            - generic [aria-hidden] [ref=e30]: month-end
+            - generic [aria-hidden] [ref=e31]: scramble.
+        - paragraph [ref=e32]: Arisotech HRMS brings attendance, leave, salaries and statutory compliance into one system built for Indian companies. By the time you run payroll, the inputs are already in.
+        - generic [ref=e33]:
+          - link "Book a demo" [ref=e34] [cursor=pointer]:
+            - /url: /contact/
+          - link "See pricing" [ref=e35] [cursor=pointer]:
+            - /url: /pricing/
+        - paragraph [ref=e36]: Try it with sample data first. No card needed.
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: A
+          - generic [ref=e42]: Mehta Textiles Pvt Ltd
+          - generic [ref=e43]: Search people, payslips, policies
+          - generic [ref=e50]: SA
+        - generic [ref=e51]:
+          - navigation [aria-hidden] [ref=e52]:
+            - generic [ref=e53]: Home
+            - generic [ref=e57]: People
+            - generic [ref=e62]: Payroll
+            - generic [ref=e66]: Time
+            - generic [ref=e70]: Leave
+            - generic [ref=e75]: Hire
+            - generic [ref=e80]: Reports
+          - generic [ref=e87]:
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - generic [ref=e94]:
+                  - generic [ref=e95]: March net pay
+                  - generic [ref=e96]: ₹54.5 L
+                  - generic [ref=e97]: for 142 employees
+              - listitem [ref=e98]:
+                - generic [ref=e103]:
+                  - generic [ref=e104]: Present today
+                  - generic [ref=e105]: 94%
+                  - generic [ref=e106]: 133 of 142 clocked in
+              - listitem [ref=e107]:
+                - generic [ref=e113]:
+                  - generic [ref=e114]: Leave requests
+                  - generic [ref=e115]: "6"
+                  - generic [ref=e116]: waiting for approval
+              - listitem [ref=e117]:
+                - generic [ref=e123]:
+                  - generic [ref=e124]: Open roles
+                  - generic [ref=e125]: "4"
+                  - generic [ref=e126]: 29 candidates in pipeline
+            - generic [ref=e127]:
+              - 'generic "Sample payroll run for March: 142 employees paid, total net pay 54,54,310 rupees" [ref=e129]':
+                - generic [ref=e130]:
+                  - paragraph [ref=e131]: March payroll run
+                  - paragraph [ref=e132]: Pay date 31 Mar
+                - list [aria-hidden] [ref=e133]:
+                  - listitem [ref=e134]:
+                    - generic [ref=e135]:
+                      - paragraph [ref=e136]: Ananya Rathore
+                      - paragraph [ref=e137]: Product designer
+                    - paragraph [ref=e138]: ₹68,420
+                    - generic [ref=e139]: Paid
+                  - listitem [ref=e140]:
+                    - generic [ref=e141]:
+                      - paragraph [ref=e142]: Vikram Shekhawat
+                      - paragraph [ref=e143]: Sales lead
+                    - paragraph [ref=e144]: ₹91,150
+                    - generic [ref=e145]: Paid
+                  - listitem [ref=e146]:
+                    - generic [ref=e147]:
+                      - paragraph [ref=e148]: Farah Khan
+                      - paragraph [ref=e149]: Support executive
+                    - paragraph [ref=e150]: ₹27,880
+                    - generic [ref=e151]: Paid
+                  - listitem [ref=e152]:
+                    - generic [ref=e153]:
+                      - paragraph [ref=e154]: Jatin Meena
+                      - paragraph [ref=e155]: Accountant
+                    - paragraph [ref=e156]: ₹42,300
+                    - generic [ref=e157]: Paid
+                - generic [aria-hidden] [ref=e158]:
+                  - generic [ref=e159]:
+                    - paragraph [ref=e160]: 142 employees paid
+                    - paragraph [ref=e161]: ₹54,54,310
+                  - paragraph [ref=e162]: PF, ESI, PT and TDS calculated. Bank file ready.
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - paragraph [ref=e165]: Payroll cost
+                  - paragraph [ref=e166]: Lakh ₹, last 6 months
+                - img "Total payroll cost has grown from 62 lakh rupees in October to 72 lakh in March" [ref=e168]:
+                  - generic [ref=e169]: Oct
+                  - generic [ref=e171]: Nov
+                  - generic [ref=e173]: Dec
+                  - generic [ref=e175]: Jan
+                  - generic [ref=e177]: Feb
+                  - generic [ref=e179]: Mar
+                - list [ref=e181]:
+                  - listitem [ref=e182]: Gross pay
+                  - listitem [ref=e184]: Employer PF and ESI
+                  - listitem [ref=e186]: Reimbursements
+              - generic [ref=e188]:
+                - paragraph [ref=e189]: Quick actions
+                - list [ref=e190]:
+                  - listitem [ref=e191]:
+                    - generic [ref=e195]: Run March payroll
+                  - listitem [ref=e198]:
+                    - generic [ref=e203]: Approve leave
+                    - generic [ref=e204]: "6"
+                  - listitem [ref=e207]:
+                    - generic [ref=e212]: Approve expenses
+                    - generic [ref=e213]: "4"
+                  - listitem [ref=e216]:
+                    - generic [ref=e221]: Add employee
+                  - listitem [ref=e224]:
+                    - generic [ref=e231]: Download PF ECR
+    - region [ref=e234]:
+      - generic [ref=e235]:
+        - heading "HR software built the way Indian payroll works" [level=2] [ref=e236]
+        - paragraph [ref=e237]: One system, set up with you, that your HR team can run on its own.
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - heading "Built for Indian payroll" [level=3] [ref=e244]
+            - paragraph [ref=e245]: PF, ESI, professional tax, labour welfare fund and TDS are worked out by state and regime as you run payroll, not patched on afterwards.
+          - generic [ref=e246]:
+            - heading "One record behind every module" [level=3] [ref=e252]
+            - paragraph [ref=e253]: Attendance, leave, expenses and payroll all read from the same employee record, so nothing has to be keyed in twice.
+        - generic [ref=e256]:
+          - paragraph [ref=e258]: Employee profile
+          - generic [ref=e259]:
+            - generic [ref=e260]:
+              - generic [ref=e261]: RM
+              - generic [ref=e262]:
+                - paragraph [ref=e263]: Rohan Mehta
+                - paragraph [ref=e264]: Senior accounts associate
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - term [ref=e267]: Department
+                - definition [ref=e268]: Finance
+              - generic [ref=e269]:
+                - term [ref=e270]: Location
+                - definition [ref=e271]: Jaipur
+              - generic [ref=e272]:
+                - term [ref=e273]: Reports to
+                - definition [ref=e274]: Sunita Agarwal
+              - generic [ref=e275]:
+                - term [ref=e276]: Joined
+                - definition [ref=e277]: 12 Aug 2022
+              - generic [ref=e278]:
+                - term [ref=e279]: UAN
+                - definition [ref=e280]: 1012 4471 9834
+              - generic [ref=e281]:
+                - term [ref=e282]: PAN
+                - definition [ref=e283]: Verified
+            - list [ref=e284]:
+              - listitem [ref=e285]: Appointment letter.pdf
+              - listitem [ref=e289]: Increment letter, April 2025.pdf
+        - generic [ref=e293]:
+          - generic [ref=e294]:
+            - heading "Live in weeks, with our team" [level=3] [ref=e301]
+            - paragraph [ref=e302]: We import your employee master and last salary register, then run a parallel payroll with you before you switch.
+          - generic [ref=e303]:
+            - heading "Made for HR, not IT" [level=3] [ref=e306]
+            - paragraph [ref=e307]: Leave rules, salary structures and approval chains are settings an HR manager can change without raising a ticket.
+    - region [ref=e308]:
+      - generic [ref=e309]:
+        - heading "One platform for people, pay and time" [level=2] [ref=e311]
+        - generic [ref=e312]:
+          - navigation "Modules" [ref=e313]:
+            - list [ref=e314]:
+              - listitem [ref=e315]:
+                - link "Payroll" [ref=e316] [cursor=pointer]:
+                  - /url: "#panel-payroll"
+              - listitem [ref=e319]:
+                - link "Core HR" [ref=e320] [cursor=pointer]:
+                  - /url: "#panel-core-hr"
+              - listitem [ref=e322]:
+                - link "Attendance" [ref=e323] [cursor=pointer]:
+                  - /url: "#panel-attendance"
+              - listitem [ref=e325]:
+                - link "Leave" [ref=e326] [cursor=pointer]:
+                  - /url: "#panel-leave"
+              - listitem [ref=e328]:
+                - link "Recruitment" [ref=e329] [cursor=pointer]:
+                  - /url: "#panel-recruitment"
+              - listitem [ref=e331]:
+                - link "Performance" [ref=e332] [cursor=pointer]:
+                  - /url: "#panel-performance"
+          - generic [ref=e334]:
+            - article [ref=e335]:
+              - generic [ref=e336]:
+                - paragraph [ref=e337]: Payroll
+                - heading "Run payroll in an afternoon, with compliance already done" [level=3] [ref=e338]
+                - paragraph [ref=e339]: Attendance, leave and reimbursements flow into payroll automatically. Statutory deductions are calculated as you run it, and payslips and challans are ready the moment you lock the month.
+              - generic [ref=e341]:
+                - generic [ref=e342]:
+                  - paragraph [ref=e343]: March payroll
+                  - generic [ref=e344]: Ready to lock
+                - generic [ref=e345]:
+                  - generic [ref=e346]:
+                    - generic [ref=e347]:
+                      - term [ref=e348]: Employees
+                      - definition [ref=e349]: "142"
+                    - generic [ref=e350]:
+                      - term [ref=e351]: Gross
+                      - definition [ref=e352]: ₹62,40,000
+                    - generic [ref=e353]:
+                      - term [ref=e354]: Net pay
+                      - definition [ref=e355]: ₹54,54,310
+                  - table [ref=e356]:
+                    - caption [ref=e357]: Statutory deductions this month
+                    - rowgroup [ref=e358]:
+                      - row [ref=e359]:
+                        - rowheader "Provident fund" [ref=e360]
+                        - cell "₹3,74,400" [ref=e361]
+                      - row [ref=e362]:
+                        - rowheader "ESI" [ref=e363]
+                        - cell "₹18,290" [ref=e364]
+                      - row [ref=e365]:
+                        - rowheader "Professional tax" [ref=e366]
+                        - cell "₹28,400" [ref=e367]
+                      - row [ref=e368]:
+                        - rowheader "TDS" [ref=e369]
+                        - cell "₹3,64,600" [ref=e370]
+                  - paragraph [ref=e371]: "6 changes from February: 4 joiners, 1 exit, 1 salary revision."
+              - link "Learn more about payroll" [ref=e373] [cursor=pointer]:
+                - /url: /features/payroll/
+            - article [ref=e374]:
+              - generic [ref=e375]:
+                - paragraph [ref=e376]: Core HR
+                - heading "Every employee record in one place, always current" [level=3] [ref=e377]
+                - paragraph [ref=e378]: Profiles, documents, reporting lines and job history live in a single record that payroll, attendance and leave all read from. Change a designation once and every module sees it.
+              - generic [ref=e380]:
+                - paragraph [ref=e382]: Employee profile
+                - generic [ref=e383]:
+                  - generic [ref=e384]:
+                    - generic [ref=e385]: RM
+                    - generic [ref=e386]:
+                      - paragraph [ref=e387]: Rohan Mehta
+                      - paragraph [ref=e388]: Senior accounts associate
+                  - generic [ref=e389]:
+                    - generic [ref=e390]:
+                      - term [ref=e391]: Department
+                      - definition [ref=e392]: Finance
+                    - generic [ref=e393]:
+                      - term [ref=e394]: Location
+                      - definition [ref=e395]: Jaipur
+                    - generic [ref=e396]:
+                      - term [ref=e397]: Reports to
+                      - definition [ref=e398]: Sunita Agarwal
+                    - generic [ref=e399]:
+                      - term [ref=e400]: Joined
+                      - definition [ref=e401]: 12 Aug 2022
+                    - generic [ref=e402]:
+                      - term [ref=e403]: UAN
+                      - definition [ref=e404]: 1012 4471 9834
+                    - generic [ref=e405]:
+                      - term [ref=e406]: PAN
+                      - definition [ref=e407]: Verified
+                  - list [ref=e408]:
+                    - listitem [ref=e409]: Appointment letter.pdf
+                    - listitem [ref=e413]: Increment letter, April 2025.pdf
+              - link "Learn more about core hr" [ref=e418] [cursor=pointer]:
+                - /url: /features/core-hr/
+            - article [ref=e419]:
+              - generic [ref=e420]:
+                - paragraph [ref=e421]: Attendance
+                - heading "Attendance that lands in payroll without a spreadsheet" [level=3] [ref=e422]
+                - paragraph [ref=e423]: Employees clock in from the app, the web or your existing biometric device. Shifts, late marks and overtime rules are applied as the day happens, so month-end is a review, not a reconstruction.
+              - generic [ref=e425]:
+                - generic [ref=e426]:
+                  - paragraph [ref=e427]: Design team, this week
+                  - generic [ref=e428]: Shift 9:00 to 18:00
+                - generic [ref=e429]:
+                  - table [ref=e431]:
+                    - rowgroup [ref=e432]:
+                      - row [ref=e433]:
+                        - columnheader "Employee" [ref=e434]
+                        - columnheader "Mon" [ref=e435]
+                        - columnheader "Tue" [ref=e436]
+                        - columnheader "Wed" [ref=e437]
+                        - columnheader "Thu" [ref=e438]
+                        - columnheader "Fri" [ref=e439]
+                        - columnheader "Sat" [ref=e440]
+                    - rowgroup [ref=e441]:
+                      - row [ref=e442]:
+                        - rowheader "Ananya R." [ref=e443]
+                        - cell "9:02" [ref=e444]
+                        - cell "8:57" [ref=e446]
+                        - cell "9:41" [ref=e448]
+                        - cell "9:05" [ref=e450]
+                        - cell "9:00" [ref=e452]
+                        - cell "Off" [ref=e454]
+                      - row [ref=e456]:
+                        - rowheader "Vikram S." [ref=e457]
+                        - cell "8:48" [ref=e458]
+                        - cell "CL" [ref=e460]
+                        - cell "8:51" [ref=e462]
+                        - cell "8:55" [ref=e464]
+                        - cell "9:38" [ref=e466]
+                        - cell "Off" [ref=e468]
+                      - row [ref=e470]:
+                        - rowheader "Farah K." [ref=e471]
+                        - cell "9:10" [ref=e472]
+                        - cell "9:04" [ref=e474]
+                        - cell "9:06" [ref=e476]
+                        - cell "9:00" [ref=e478]
+                        - cell "9:12" [ref=e480]
+                        - cell "10:01" [ref=e482]
+                      - row [ref=e484]:
+                        - rowheader "Jatin M." [ref=e485]
+                        - cell "9:44" [ref=e486]
+                        - cell "9:01" [ref=e488]
+                        - cell "8:59" [ref=e490]
+                        - cell "SL" [ref=e492]
+                        - cell "SL" [ref=e494]
+                        - cell "Off" [ref=e496]
+                  - paragraph [ref=e498]: Farah clocked in from the Malviya Nagar office.
+              - link "Learn more about attendance" [ref=e503] [cursor=pointer]:
+                - /url: /features/attendance/
+            - article [ref=e504]:
+              - generic [ref=e505]:
+                - paragraph [ref=e506]: Leave
+                - heading "Leave policies your team can read and the system enforces" [level=3] [ref=e507]
+                - paragraph [ref=e508]: Set up casual, sick, earned and any other leave type with accrual, carry-forward and encashment rules. Employees see their balance before they apply, and managers approve from the app.
+              - generic [ref=e510]:
+                - paragraph [ref=e512]: Leave request
+                - generic [ref=e513]:
+                  - generic [ref=e514]:
+                    - generic [ref=e515]:
+                      - generic [ref=e516]:
+                        - paragraph [ref=e517]: Priya Nair
+                        - paragraph [ref=e518]: Earned leave, 14 to 16 April (3 days)
+                      - generic [ref=e519]: Awaiting you
+                    - paragraph [ref=e520]: "Also away on these dates: Karan (15 April)."
+                    - generic [ref=e521]:
+                      - generic [ref=e522]: Approve
+                      - generic [ref=e523]: Decline
+                  - paragraph [ref=e524]: Priya's balance after this request
+                  - list [ref=e525]:
+                    - listitem [ref=e526]:
+                      - generic [ref=e527]:
+                        - generic [ref=e528]: Casual
+                        - generic [ref=e529]: 6 of 12 left
+                    - listitem [ref=e532]:
+                      - generic [ref=e533]:
+                        - generic [ref=e534]: Sick
+                        - generic [ref=e535]: 4 of 8 left
+                    - listitem [ref=e538]:
+                      - generic [ref=e539]:
+                        - generic [ref=e540]: Earned
+                        - generic [ref=e541]: 8.5 of 15 left
+              - link "Learn more about leave" [ref=e545] [cursor=pointer]:
+                - /url: /features/leave/
+            - article [ref=e546]:
+              - generic [ref=e547]:
+                - paragraph [ref=e548]: Recruitment
+                - heading "Hire from one pipeline instead of five inboxes" [level=3] [ref=e549]
+                - paragraph [ref=e550]: Publish openings, collect applications and move candidates through interview stages your team agrees on. When someone accepts an offer, they become an employee record without retyping anything.
+              - generic [ref=e552]:
+                - generic [ref=e553]:
+                  - paragraph [ref=e554]: Backend engineer, Jaipur
+                  - generic [ref=e555]: Opened 12 days ago
+                - generic [ref=e557]:
+                  - generic [ref=e558]:
+                    - paragraph [ref=e559]:
+                      - text: Applied
+                      - generic [ref=e560]: "48"
+                    - list [ref=e561]:
+                      - listitem [ref=e562]: Neha
+                      - listitem [ref=e563]: Imran
+                      - listitem [ref=e564]: Tara
+                  - generic [ref=e565]:
+                    - paragraph [ref=e566]:
+                      - text: Screening
+                      - generic [ref=e567]: "16"
+                    - list [ref=e568]:
+                      - listitem [ref=e569]: Dev
+                      - listitem [ref=e570]: Kavya
+                  - generic [ref=e571]:
+                    - paragraph [ref=e572]:
+                      - text: Interview
+                      - generic [ref=e573]: "7"
+                    - list [ref=e574]:
+                      - listitem [ref=e575]: Ritu
+                      - listitem [ref=e576]: Omar
+                  - generic [ref=e577]:
+                    - paragraph [ref=e578]:
+                      - text: Offer
+                      - generic [ref=e579]: "2"
+                    - list [ref=e580]:
+                      - listitem [ref=e581]: Aditya
+              - link "Learn more about recruitment" [ref=e583] [cursor=pointer]:
+                - /url: /features/recruitment/
+            - article [ref=e584]:
+              - generic [ref=e585]:
+                - paragraph [ref=e586]: Performance
+                - heading "Reviews built on goals people actually tracked" [level=3] [ref=e587]
+                - paragraph [ref=e588]: Set goals at the start of a cycle, update progress through the year, and run reviews that draw on that record rather than on memory.
+              - generic [ref=e590]:
+                - generic [ref=e591]:
+                  - paragraph [ref=e592]: Goals, April to September
+                  - generic [ref=e593]: Finance team
+                - generic [ref=e594]:
+                  - list [ref=e595]:
+                    - listitem [ref=e596]:
+                      - generic [ref=e597]:
+                        - paragraph [ref=e598]: Cut month-end close to 3 days
+                        - generic [ref=e599]: On track
+                      - generic [ref=e600]: 72%
+                    - listitem [ref=e604]:
+                      - generic [ref=e605]:
+                        - paragraph [ref=e606]: Move vendor payments to UPI
+                        - generic [ref=e607]: Done
+                      - generic [ref=e608]: 100%
+                    - listitem [ref=e612]:
+                      - generic [ref=e613]:
+                        - paragraph [ref=e614]: Train two new analysts
+                        - generic [ref=e615]: On track
+                      - generic [ref=e616]: 40%
+                  - paragraph [ref=e620]: Next check-in with your manager on 18 April.
+              - link "Learn more about performance" [ref=e622] [cursor=pointer]:
+                - /url: /features/performance/
+    - region [ref=e623]:
+      - generic [ref=e624]:
+        - generic [ref=e625]:
+          - heading "Statutory rules are part of every payroll run" [level=2] [ref=e626]
+          - paragraph [ref=e627]: Deductions, employer contributions and filing data are calculated in the same run that produces payslips, so compliance is never a separate month-end job.
+        - list [ref=e628]:
+          - listitem [ref=e629]:
+            - generic [ref=e630]: PF
+            - paragraph [ref=e631]: Provident fund
+            - paragraph [ref=e632]: ECR file each month
+          - listitem [ref=e633]:
+            - generic [ref=e634]: ESI
+            - paragraph [ref=e635]: Employee state insurance
+            - paragraph [ref=e636]: Contributions and returns
+          - listitem [ref=e637]:
+            - generic [ref=e638]: PT
+            - paragraph [ref=e639]: Professional tax
+            - paragraph [ref=e640]: State-wise slabs
+          - listitem [ref=e641]:
+            - generic [ref=e642]: LWF
+            - paragraph [ref=e643]: Labour welfare fund
+            - paragraph [ref=e644]: Where it applies
+          - listitem [ref=e645]:
+            - generic [ref=e646]: TDS
+            - paragraph [ref=e647]: Income tax
+            - paragraph [ref=e648]: Old and new regime, Form 16
+          - listitem [ref=e649]:
+            - generic [ref=e650]: ₹
+            - paragraph [ref=e651]: Gratuity
+            - paragraph [ref=e652]: In full-and-final settlement
+    - region [ref=e653]:
+      - generic [ref=e654]:
+        - generic [ref=e655]:
+          - heading "A payroll month, with the busywork taken out" [level=2] [ref=e656]
+          - paragraph [ref=e657]: The dates below are a typical cycle. You set your own cut-off and pay dates, and the system keeps track of the statutory deadlines that follow.
+        - list [ref=e658]:
+          - listitem [ref=e660]:
+            - generic [ref=e662]:
+              - paragraph [ref=e663]: This month
+              - paragraph [ref=e664]: "1"
+              - heading "Attendance opens" [level=3] [ref=e665]
+              - paragraph [ref=e666]: Clock-ins, leave and shift changes start counting toward this month.
+          - listitem [ref=e667]:
+            - generic [ref=e669]:
+              - paragraph [ref=e670]: This month
+              - paragraph [ref=e671]: "25"
+              - heading "Inputs close" [level=3] [ref=e672]
+              - paragraph [ref=e673]: Payable days, overtime and approved expense claims are pulled into payroll.
+          - listitem [ref=e674]:
+            - generic [ref=e676]:
+              - paragraph [ref=e677]: This month
+              - paragraph [ref=e678]: "27"
+              - heading "You review" [level=3] [ref=e679]
+              - paragraph [ref=e680]: Every difference from last month is listed with the reason next to it.
+          - listitem [ref=e681]:
+            - generic [ref=e683]:
+              - paragraph [ref=e684]: This month
+              - paragraph [ref=e685]: "28"
+              - heading "Lock and publish" [level=3] [ref=e686]
+              - paragraph [ref=e687]: Payslips go to the employee app and the bank transfer file is generated.
+          - listitem [ref=e688]:
+            - generic [ref=e690]:
+              - paragraph [ref=e691]: Next month
+              - paragraph [ref=e692]: "7"
+              - heading "TDS deposit" [level=3] [ref=e693]
+              - paragraph [ref=e694]: The TDS amount and challan details are ready from the locked run.
+          - listitem [ref=e695]:
+            - generic [ref=e697]:
+              - paragraph [ref=e698]: Next month
+              - paragraph [ref=e699]: "15"
+              - heading "PF and ESI due" [level=3] [ref=e700]
+              - paragraph [ref=e701]: The PF ECR and ESI contribution files are ready to upload.
+    - region [ref=e702]:
+      - generic [ref=e703]:
+        - generic [ref=e704]:
+          - heading "Salary data is the most sensitive data you hold" [level=2] [ref=e709]
+          - paragraph [ref=e710]: We treat it that way, starting with who can see it.
+        - list [ref=e711]:
+          - listitem [ref=e712]:
+            - generic [ref=e714]:
+              - paragraph [ref=e715]: Who can see what
+              - table [ref=e716]:
+                - rowgroup [ref=e717]:
+                  - row [ref=e718]:
+                    - columnheader "Role" [ref=e719]
+                    - columnheader "Profile" [ref=e720]
+                    - columnheader "Team leave" [ref=e721]
+                    - columnheader "Salaries" [ref=e722]
+                - rowgroup [ref=e723]:
+                  - row [ref=e724]:
+                    - rowheader "Payroll admin" [ref=e725]
+                    - cell [ref=e726]:
+                      - img "Allowed" [ref=e727]
+                    - cell [ref=e729]:
+                      - img "Allowed" [ref=e730]
+                    - cell [ref=e732]:
+                      - img "Allowed" [ref=e733]
+                  - row [ref=e735]:
+                    - rowheader "Manager" [ref=e736]
+                    - cell [ref=e737]:
+                      - img "Allowed" [ref=e738]
+                    - cell [ref=e740]:
+                      - img "Allowed" [ref=e741]
+                    - cell "Hidden" [ref=e743]: "-"
+                  - row [ref=e744]:
+                    - rowheader "Employee" [ref=e745]
+                    - cell [ref=e746]:
+                      - img "Allowed" [ref=e747]
+                    - cell "Hidden" [ref=e749]: "-"
+                    - cell "Hidden" [ref=e750]: "-"
+            - paragraph [ref=e751]: Access by role
+            - heading "People see only what their role needs" [level=3] [ref=e755]
+            - paragraph [ref=e756]: Managers see their team. Payroll admins see salaries. Everyone else sees their own record.
+          - listitem [ref=e757]:
+            - generic [ref=e759]:
+              - paragraph [ref=e760]: Change history
+              - list [ref=e761]:
+                - listitem [ref=e762]:
+                  - generic [ref=e764]:
+                    - generic [ref=e765]: Revised CTC for Rohan Mehta
+                    - generic [ref=e766]: Sunita A., 10:42
+                - listitem [ref=e767]:
+                  - generic [ref=e769]:
+                    - generic [ref=e770]: Changed bank account for Farah Khan
+                    - generic [ref=e771]: Karan P., 09:15
+                - listitem [ref=e772]:
+                  - generic [ref=e774]:
+                    - generic [ref=e775]: Locked February payroll
+                    - generic [ref=e776]: Sunita A., Yesterday
+            - paragraph [ref=e777]: Every change logged
+            - heading "Know who changed what, and when" [level=3] [ref=e782]
+            - paragraph [ref=e783]: Salary revisions, bank detail edits and payroll locks are recorded with the person and time.
+          - listitem [ref=e784]:
+            - generic [ref=e786]:
+              - paragraph [ref=e787]: Data protection
+              - list [ref=e788]:
+                - listitem [ref=e789]: Encrypted in transit
+                - listitem [ref=e793]: Encrypted at rest
+                - listitem [ref=e797]: Regular backups
+                - listitem [ref=e801]: Export your data any time
+            - paragraph [ref=e805]: Encrypted and backed up
+            - heading "Your records stay safe and yours" [level=3] [ref=e809]
+            - paragraph [ref=e810]: Data is encrypted in transit and at rest, backed up regularly, and exportable whenever you want.
+    - region [ref=e811]:
+      - heading "Set up for the stage your company is at" [level=2] [ref=e813]
+      - generic [ref=e814]:
+        - tablist "Company stages" [ref=e815]:
+          - tab "Startups, 10 to 50 people" [selected] [ref=e816]
+          - tab "Growing companies, 50 to 500" [ref=e818]
+          - tab "Multi-location and multi-entity" [ref=e819]
+          - button "Pause slides" [ref=e820]
+        - tabpanel [ref=e824]:
+          - paragraph [ref=e825]: Startups, 10 to 50 people
+          - heading "From one salary spreadsheet to a payroll you can hand over" [level=3] [ref=e826]
+          - paragraph [ref=e827]: PF, ESI and PT set up correctly from the first run, offer letters from templates, and no full-time HR person needed.
+          - link "See how it fits" [ref=e829] [cursor=pointer]:
+            - /url: /solutions/#startups
+    - region [ref=e830]:
+      - generic [ref=e831]:
+        - generic [ref=e832]:
+          - generic [ref=e833]:
+            - heading "The questions HR answers every week, answered by the app" [level=2] [ref=e834]
+            - paragraph [ref=e835]: Employees get Arisotech on Android, iOS and the web. Routine requests stop landing in HR's inbox and WhatsApp.
+          - list [ref=e836]:
+            - listitem [ref=e837]:
+              - paragraph [ref=e838]: “Can you send me my payslip for March?”
+              - paragraph [ref=e839]: Downloaded from the app, any month, any time.
+            - listitem [ref=e840]:
+              - paragraph [ref=e841]: “How many leaves do I have left?”
+              - paragraph [ref=e842]: Shown before they apply, including what the request will use.
+            - listitem [ref=e843]:
+              - paragraph [ref=e844]: “I forgot to punch in yesterday.”
+              - paragraph [ref=e845]: A regularisation request goes to their manager.
+            - listitem [ref=e846]:
+              - paragraph [ref=e847]: “Where do I upload my rent receipts?”
+              - paragraph [ref=e848]: Tax declarations and proofs are submitted in the app.
+        - generic [ref=e851]:
+          - paragraph [ref=e852]: Good morning,
+          - paragraph [ref=e853]: Sneha
+          - generic [ref=e854]:
+            - paragraph [ref=e855]: You clocked in at
+            - paragraph [ref=e856]: 9:04 am
+            - paragraph [ref=e857]: Office, C-Scheme
+          - list [ref=e858]:
+            - listitem [ref=e859]:
+              - generic [ref=e860]: March payslip
+              - img "Download" [ref=e861]
+            - listitem [ref=e864]:
+              - generic [ref=e865]: Leave balance
+              - generic [ref=e866]: 9 days
+            - listitem [ref=e867]:
+              - generic [ref=e868]: Tax declaration
+              - generic [ref=e869]: Proofs due
+    - generic [ref=e870]:
+      - heading "Questions people ask" [level=2] [ref=e871]
+      - generic [ref=e872]:
+        - group [ref=e873]:
+          - generic "How long does it take to get started?" [ref=e874] [cursor=pointer]
+        - group [ref=e876]:
+          - generic "We use spreadsheets and Tally today. Can we move?" [ref=e877] [cursor=pointer]
+        - group [ref=e879]:
+          - generic "What does it cost?" [ref=e880] [cursor=pointer]
+        - group [ref=e882]:
+          - generic "Is my data safe?" [ref=e883] [cursor=pointer]
+    - generic [ref=e887]:
+      - heading "See your own payroll run in Arisotech" [level=2] [ref=e888]
+      - paragraph [ref=e889]: In a 30-minute demo we set up a sample company that looks like yours and run a month of payroll together.
+      - generic [ref=e890]:
+        - link "Book a demo" [ref=e891] [cursor=pointer]:
+          - /url: /contact/
+        - link "See pricing" [ref=e892] [cursor=pointer]:
+          - /url: /pricing/
+  - contentinfo [ref=e893]:
+    - paragraph [ref=e895]: Arisotech
+    - generic [ref=e896]:
+      - generic [ref=e897]:
+        - generic [ref=e898]:
+          - link "Arisotech home" [ref=e899] [cursor=pointer]:
+            - /url: /
+            - text: Arisotech
+          - paragraph [ref=e900]: Arisotech HRMS keeps employee records, attendance, leave, payroll and statutory compliance in one system, so payday numbers are right the first time.
+          - list [ref=e901]:
+            - listitem [ref=e902]:
+              - link "LinkedIn" [ref=e903] [cursor=pointer]:
+                - /url: https://linkedin.com/company/arisotech
+            - listitem [ref=e908]:
+              - link "X (Twitter)" [ref=e909] [cursor=pointer]:
+                - /url: https://twitter.com/arisotech
+            - listitem [ref=e912]:
+              - link "Facebook" [ref=e913] [cursor=pointer]:
+                - /url: https://facebook.com/arisotech
+        - generic [ref=e916]:
+          - heading "Product" [level=2] [ref=e917]
+          - list [ref=e918]:
+            - listitem [ref=e919]:
+              - link "Core HR" [ref=e920] [cursor=pointer]:
+                - /url: /features/core-hr/
+            - listitem [ref=e921]:
+              - link "Payroll" [ref=e922] [cursor=pointer]:
+                - /url: /features/payroll/
+            - listitem [ref=e923]:
+              - link "Attendance" [ref=e924] [cursor=pointer]:
+                - /url: /features/attendance/
+            - listitem [ref=e925]:
+              - link "Leave" [ref=e926] [cursor=pointer]:
+                - /url: /features/leave/
+            - listitem [ref=e927]:
+              - link "Expenses" [ref=e928] [cursor=pointer]:
+                - /url: /features/expenses/
+            - listitem [ref=e929]:
+              - link "Recruitment" [ref=e930] [cursor=pointer]:
+                - /url: /features/recruitment/
+            - listitem [ref=e931]:
+              - link "Performance" [ref=e932] [cursor=pointer]:
+                - /url: /features/performance/
+            - listitem [ref=e933]:
+              - link "Employee app" [ref=e934] [cursor=pointer]:
+                - /url: /features/self-service/
+        - generic [ref=e935]:
+          - heading "Company" [level=2] [ref=e936]
+          - list [ref=e937]:
+            - listitem [ref=e938]:
+              - link "About" [ref=e939] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e940]:
+              - link "Pricing" [ref=e941] [cursor=pointer]:
+                - /url: /pricing/
+            - listitem [ref=e942]:
+              - link "Solutions" [ref=e943] [cursor=pointer]:
+                - /url: /solutions/
+            - listitem [ref=e944]:
+              - link "Resources" [ref=e945] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e946]:
+              - link "Book a demo" [ref=e947] [cursor=pointer]:
+                - /url: /contact/
+        - generic [ref=e948]:
+          - heading "Contact" [level=2] [ref=e949]
+          - list [ref=e950]:
+            - listitem [ref=e951]:
+              - link "info@arisotech.com" [ref=e952] [cursor=pointer]:
+                - /url: mailto:info@arisotech.com
+            - listitem [ref=e953]:
+              - link "+91 63675 83182" [ref=e954] [cursor=pointer]:
+                - /url: tel:+916367583182
+            - listitem [ref=e955]:
+              - link "+91 89490 79430" [ref=e956] [cursor=pointer]:
+                - /url: tel:+918949079430
+            - listitem [ref=e957]: Jaipur, Rajasthan 302012
+      - paragraph [ref=e959]: © 2026 Arisotech. All rights reserved.
+  - link "Chat with us on WhatsApp" [ref=e960] [cursor=pointer]:
+    - /url: https://wa.me/918949079430?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Arisotech%20HRMS.
