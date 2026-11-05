@@ -1,133 +1,98 @@
 import Link from 'next/link'
-import { Linkedin, Twitter, Github, Facebook, Mail, Phone } from 'lucide-react'
+import { Facebook, Linkedin, Twitter } from 'lucide-react'
+import Logo from './Logo'
+import WordmarkBand from './WordmarkBand'
 import siteConfig from '@/content/site-config.json'
+import { modules } from '@/lib/content'
+
+const company = [
+  { name: 'About', href: '/about/' },
+  { name: 'Pricing', href: '/pricing/' },
+  { name: 'Solutions', href: '/solutions/' },
+  { name: 'Resources', href: '/blog/' },
+  { name: 'Book a demo', href: '/contact/' },
+]
+
+const social = [
+  { name: 'LinkedIn', href: siteConfig.socialMedia.linkedin, Icon: Linkedin },
+  { name: 'X (Twitter)', href: siteConfig.socialMedia.twitter, Icon: Twitter },
+  { name: 'Facebook', href: siteConfig.socialMedia.facebook, Icon: Facebook },
+].filter((s) => s.href)
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">{siteConfig.siteName}</h3>
-            <p className="text-gray-400 mb-4 max-w-md">
-              {siteConfig.description}
-            </p>
-            <div className="flex space-x-4">
-              {siteConfig.socialMedia.linkedin && (
-                <a
-                  href={siteConfig.socialMedia.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              )}
-              {siteConfig.socialMedia.twitter && (
-                <a
-                  href={siteConfig.socialMedia.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-              )}
-              {siteConfig.socialMedia.github && (
-                <a
-                  href={siteConfig.socialMedia.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-              )}
-              {siteConfig.socialMedia.facebook && (
-                <a
-                  href={siteConfig.socialMedia.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-              )}
-            </div>
-          </div>
-
-          {/* Quick Links */}
+    <footer className="bg-[#151c5e] text-white/80">
+      <WordmarkBand />
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <h4 className="text-sm font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
+            <Logo inverse />
+            <p className="mt-4 max-w-sm text-white/70">{siteConfig.description}</p>
+            <ul className="mt-6 flex gap-4">
+              {social.map(({ name, href, Icon }) => (
+                <li key={name}>
+                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={name} className="text-white/60 hover:text-white">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
-              {siteConfig.email && (
-                <li className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
-                    {siteConfig.email}
+            <h2 className="font-display text-base font-semibold text-white">Product</h2>
+            <ul className="mt-4 space-y-2.5">
+              {modules.map((m) => (
+                <li key={m.slug}>
+                  <Link href={`/features/${m.slug}/`} className="hover:text-white">
+                    {m.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-display text-base font-semibold text-white">Company</h2>
+            <ul className="mt-4 space-y-2.5">
+              {company.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white">
+                    {l.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-display text-base font-semibold text-white">Contact</h2>
+            <ul className="mt-4 space-y-2.5">
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
+                  {siteConfig.email}
+                </a>
+              </li>
+              {siteConfig.phones.map((p) => (
+                <li key={p.tel}>
+                  <a href={`tel:${p.tel}`} className="figures hover:text-white">
+                    {p.display}
                   </a>
                 </li>
-              )}
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <a href="tel:+916367583182" className="hover:text-white transition-colors">
-                  +91 6367583182
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <a href="tel:+918949079430" className="hover:text-white transition-colors">
-                  +91 89490 79430
-                </a>
-              </li>
+              ))}
+              <li className="text-white/60">{siteConfig.address}</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 {siteConfig.siteName}. All rights reserved.</p>
+        <div className="mt-14 border-t border-white/15 pt-6 text-sm text-white/55">
+          <p>
+            © {year} {siteConfig.siteName}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   )
 }
-

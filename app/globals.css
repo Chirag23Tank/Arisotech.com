@@ -1,20 +1,258 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Arisotech HRMS theme
+  A night-to-dawn sky in the logo's blue family. Colour still encodes state in product UI:
+  brand blue = actions, paid green = approved/settled, pending amber = waiting.
+*/
+@theme {
+  --color-ink: #10163d;
+  --color-ink-soft: #3a4366;
+  --color-muted: #5d6585;
+  --color-paper: #f5f7fc;
+  --color-surface: #ffffff;
+  --color-line: #dfe3ee;
+  --color-line-strong: #c4cadb;
+
+  --color-brand: #2563eb;
+  --color-brand-strong: #1d4ed8;
+  --color-brand-wash: #e8efff;
+
+  --color-night: #080c2e;
+  --color-midnight: #121a5c;
+  --color-indigo: #2c3aa8;
+  --color-dusk: #5b74e8;
+  --color-dawn: #f4c6ad;
+
+  --color-paid: #18805a;
+  --color-paid-wash: #e3f4ec;
+  --color-pending: #b45309;
+  --color-pending-wash: #fdf1e1;
+
+  --font-display: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-chip: 6px;
+  --radius-panel: 12px;
+  --radius-slip: 20px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+html {
+  background: var(--color-paper);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
 }
 
-* {
-  box-sizing: border-box;
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.figures {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Lenis smooth scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---------- Skies ---------- */
+.sky-hero {
+  background:
+    radial-gradient(120% 60% at 50% 100%, rgba(244, 198, 173, 0.95) 0%, rgba(244, 198, 173, 0) 60%),
+    linear-gradient(180deg, #080c2e 0%, #121a5c 28%, #2c3aa8 52%, #5b74e8 74%, #9fb3f7 100%);
+}
+
+.sky-dusk {
+  background:
+    radial-gradient(90% 70% at 80% 110%, rgba(244, 198, 173, 0.7) 0%, rgba(244, 198, 173, 0) 60%),
+    linear-gradient(160deg, #121a5c 0%, #2c3aa8 55%, #5b74e8 100%);
+}
+
+.sky-dawn {
+  background:
+    radial-gradient(80% 60% at 20% 0%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, #5b74e8 0%, #8ea4f4 55%, #f4c6ad 100%);
+}
+
+.sky-night {
+  background:
+    radial-gradient(60% 50% at 50% 40%, rgba(91, 116, 232, 0.35) 0%, rgba(91, 116, 232, 0) 70%),
+    linear-gradient(180deg, #05081f 0%, #080c2e 60%, #121a5c 100%);
+}
+
+/* Stars: two layers of tiny dots */
+.stars {
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 32% 72%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 58% 28%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 76% 62%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 14%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 22% 46%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 46% 90%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 66% 8%, #fff 50%, transparent 51%);
+  background-size: 420px 420px;
+  opacity: 0.55;
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+/* Clouds: soft blurred ellipses drifting sideways */
+.cloud {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  filter: blur(8px);
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-12vw);
+  }
+  to {
+    transform: translateX(12vw);
+  }
+}
+
+/* Glowing orb */
+.orb {
+  background: radial-gradient(circle at 35% 30%, #8ea4f4 0%, #2c3aa8 45%, #121a5c 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 60px 10px rgba(91, 116, 232, 0.55),
+    0 0 160px 40px rgba(44, 58, 168, 0.45);
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+      0 0 50px 8px rgba(91, 116, 232, 0.45),
+      0 0 140px 30px rgba(44, 58, 168, 0.35);
+  }
+  to {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.22) inset,
+      0 0 70px 14px rgba(91, 116, 232, 0.65),
+      0 0 190px 50px rgba(44, 58, 168, 0.5);
+  }
+}
+
+/* ---------- Payroll run stamps (played when scrolled into view) ---------- */
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.6) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(-4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-4deg);
+  }
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+.run-row {
+  animation: row-in 0.4s ease-out both;
+}
+.run-stamp {
+  animation: stamp 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+.run-total {
+  animation: settle 0.6s ease-out both;
+}
+[data-play="false"] .run-row,
+[data-play="false"] .run-stamp,
+[data-play="false"] .run-total {
+  animation-play-state: paused;
+}
+
+/* Carousel progress bar */
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.progress-fill {
+  transform-origin: left;
+  animation: fill linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .run-row,
+  .run-stamp,
+  .run-total,
+  .cloud,
+  .stars,
+  .orb {
+    animation: none;
+  }
+  .progress-fill {
+    animation: none;
+    transform: scaleX(1);
+  }
 }

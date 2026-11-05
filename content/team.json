@@ -3,8 +3,8 @@
     {
       "id": "member-1",
       "name": "Chirag Tank",
-      "role": "Founder & Service Delivery Head",
-      "bio": "Visionary developer and tech enthusiast with a passion for creating innovative digital solutions. Specializes in modern web technologies, React, Next.js, and full-stack development. Combines technical expertise with strategic thinking to deliver scalable, high-performance applications that drive business growth.",
+      "role": "Founder, Product and Delivery",
+      "bio": "Leads how Arisotech HRMS is built and rolled out, from the payroll engine to the day a new customer goes live.",
       "image": "/images/team/chirag.jpg",
       "linkedin": "https://www.linkedin.com/in/chirag-tank-72220919b/",
       "github": "https://github.com/Chirag-Tank1971",
@@ -13,8 +13,8 @@
     {
       "id": "member-2",
       "name": "Aakash Singh",
-      "role": "Co-Founder & Chief Executive Officer",
-      "bio": "Dedicated to understanding client needs and building lasting partnerships. Expert in identifying business opportunities and translating client visions into actionable development strategies. Ensures seamless communication between clients and our technical team, delivering solutions that exceed expectations.",
+      "role": "Co-founder and CEO",
+      "bio": "Works with HR and finance leaders to understand how they run payroll today, and makes sure the product fits that reality.",
       "image": "/images/team/aakash.jpg",
       "linkedin": "https://www.linkedin.com/in/aakash-singh-098423255/",
       "github": "",
@@ -23,30 +23,27 @@
     {
       "id": "member-3",
       "name": "Anshuman Singh",
-      "role": "Developer",
-      "bio": "Skilled developer passionate about writing clean, efficient code and building robust applications. Contributes to our technical projects with expertise in modern development practices and problem-solving.",
-      "image": "/images/team/anshuman.jpg",
-      "linkedin": "https://linkedin.com/in/anshumansingh",
-      "github": "https://github.com/anshumansingh",
+      "role": "Engineering",
+      "bio": "Builds the modules HR teams use every day, with a focus on accuracy and speed.",
+      "linkedin": "",
+      "github": "",
       "order": 3
     },
     {
       "id": "member-4",
       "name": "Bharat Singh",
       "role": "Accounts",
-      "bio": "Dedicated finance professional ensuring accurate financial management and transparent accounting practices. Manages financial operations with precision and attention to detail, supporting the company's growth and stability.",
-      "image": "/images/team/bharat.jpg",
-      "linkedin": "https://linkedin.com/in/bharatsingh",
+      "bio": "Keeps our own books in order and brings a finance view to how payroll reports should look.",
+      "linkedin": "",
       "github": "",
       "order": 4
     },
     {
       "id": "member-5",
       "name": "Pinky Sharma",
-      "role": "HR",
-      "bio": "People-focused HR professional committed to fostering a positive work environment and supporting team growth. Manages recruitment, employee relations, and organizational development to build a strong, cohesive team.",
-      "image": "/images/team/pinky.jpg",
-      "linkedin": "https://linkedin.com/in/pinkysharma",
+      "role": "HR and customer onboarding",
+      "bio": "Brings hands-on HR experience to setting up policies and salary structures for new customers.",
+      "linkedin": "",
       "github": "",
       "order": 5
     },
@@ -54,12 +51,10 @@
       "id": "member-6",
       "name": "Devendra",
       "role": "Sales",
-      "bio": "Results-driven sales professional focused on building client relationships and driving business growth. Expert in identifying opportunities, understanding client needs, and delivering solutions that create value for our partners.",
-      "image": "/images/team/devendra.jpg",
-      "linkedin": "https://linkedin.com/in/devendra",
+      "bio": "Helps companies work out which plan fits and what moving from their current setup involves.",
+      "linkedin": "",
       "github": "",
       "order": 6
     }
   ]
 }
-

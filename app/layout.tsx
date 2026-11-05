@@ -1,151 +1,118 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import siteConfig from "@/content/site-config.json";
+import type { Metadata } from 'next'
+import { Inter, Schibsted_Grotesk } from 'next/font/google'
+import './globals.css'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import AnnouncementBar from '@/components/layout/AnnouncementBar'
+import SmoothScroll from '@/components/motion/SmoothScroll'
+import siteConfig from '@/content/site-config.json'
+import { getBaseUrl } from '@/lib/content'
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
-
-// Get production URL - never use localhost for SEO
-const getBaseUrl = () => {
-  const envUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
-  if (envUrl.includes('localhost') || envUrl.includes('127.0.0.1') || !envUrl) {
-    return 'https://arisotech.com'
-  }
-  return envUrl
-}
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
+const schibsted = Schibsted_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-schibsted',
+  weight: ['500', '600', '700', '800'],
+})
 
 const baseUrl = getBaseUrl()
 
-// CRITICAL: Force static generation for root layout to prevent RSC payload requests
 export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: siteConfig.siteName,
-    template: `%s | ${siteConfig.siteName}`,
+    default: `${siteConfig.productName}: ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.productName}`,
   },
   description: siteConfig.description,
   keywords: [
-    "web development",
-    "React Native",
-    "mobile apps",
-    "networking",
-    "software development",
-    "Jaipur",
-    "Rajasthan",
-    "India",
-    "custom software",
-    "app development",
-    "cloud solutions",
+    'HRMS',
+    'HRMS software India',
+    'payroll software',
+    'attendance management',
+    'leave management',
+    'PF ESI PT TDS',
+    'HR software for small business',
+    'employee self service',
   ],
   authors: [{ name: siteConfig.siteName, url: baseUrl }],
   creator: siteConfig.siteName,
   publisher: siteConfig.siteName,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_IN',
     url: baseUrl,
-    siteName: siteConfig.siteName,
-    title: siteConfig.siteName,
+    siteName: siteConfig.productName,
+    title: siteConfig.productName,
     description: siteConfig.description,
-    images: [
-      {
-        url: `${baseUrl}/og-image.jpg`,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.siteName,
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: siteConfig.siteName,
+    card: 'summary_large_image',
+    title: siteConfig.productName,
     description: siteConfig.description,
-    creator: "@arisotech",
-    site: "@arisotech",
+    site: '@arisotech',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "V4r7979PqjFJNbT6hqAodZ56QapDAEm7yD9CTrReC5U",
-  },
-  alternates: {
-    canonical: baseUrl,
-  },
-  category: "Technology",
-};
+  robots: { index: true, follow: true },
+  verification: { google: 'V4r7979PqjFJNbT6hqAodZ56QapDAEm7yD9CTrReC5U' },
+  alternates: { canonical: baseUrl },
+  category: 'Business software',
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // Structured Data (JSON-LD) for SEO
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteConfig.siteName,
-    description: siteConfig.description,
-    url: baseUrl,
-    logo: `${baseUrl}/logo.png`,
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: siteConfig.phone.split(',')[0].trim(),
-      contactType: "Customer Service",
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: siteConfig.siteName,
+      url: baseUrl,
       email: siteConfig.email,
-      areaServed: "IN",
-      availableLanguage: "English",
+      telephone: siteConfig.phones[0].tel,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Jaipur',
+        addressRegion: 'Rajasthan',
+        postalCode: '302012',
+        addressCountry: 'IN',
+      },
+      sameAs: Object.values(siteConfig.socialMedia).filter(Boolean),
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Jaipur",
-      addressRegion: "Rajasthan",
-      postalCode: "302012",
-      addressCountry: "IN",
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: siteConfig.productName,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web, Android, iOS',
+      description: siteConfig.description,
+      offers: { '@type': 'Offer', priceCurrency: 'INR', url: `${baseUrl}/pricing/` },
     },
-    sameAs: [
-      siteConfig.socialMedia.linkedin,
-      siteConfig.socialMedia.twitter,
-      siteConfig.socialMedia.github,
-      siteConfig.socialMedia.facebook,
-    ],
-  }
+  ]
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en-IN" className={`${inter.variable} ${schibsted.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </head>
-      <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+      <body className="min-h-screen flex flex-col antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-4 focus:py-2"
+        >
+          Skip to content
+        </a>
+        <SmoothScroll>
+          <AnnouncementBar />
+          <Header />
+          <main id="main" className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </SmoothScroll>
       </body>
     </html>
-  );
+  )
 }
