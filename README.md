@@ -1,137 +1,33 @@
-# Arisotech Website
+# Arisotech HRMS website
 
-A modern, professional website for Arisotech built with Next.js 14, TypeScript, Tailwind CSS, and Supabase.
+Marketing site for Arisotech HRMS. Next.js 16, Tailwind 4, exported as static HTML.
+The only backend is the "Book a demo" form, which inserts into a Supabase table from the browser.
 
-## Features
+## Setup
 
-- 🚀 **Next.js 14** with App Router
-- 📱 **Fully Responsive** design
-- ⚡ **Fast Performance** with optimized loading
-- 🎨 **Modern UI** with Tailwind CSS
-- 📝 **Contact Form** with Supabase integration
-- 🔍 **SEO Optimized** with metadata
-- ♿ **Accessible** components
-
-## Pages
-
-- **Home** - Hero section, services overview, portfolio showcase, testimonials
-- **Services** - Detailed service offering
-- **Portfolio** - Project showcase
-- **About** - Company information and team
-- **Blog** - Blog posts (coming soon)
-- **Contact** - Contact form and information
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-- Supabase account and project
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   cd arisotech-website
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   
-   Create a `.env.local` file in the root directory:
+1. `npm install`
+2. Create `.env.local`:
    ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_project_url_here
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
-   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   NEXT_PUBLIC_SITE_NAME=Arisotech
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+   NEXT_PUBLIC_SITE_URL=https://arisotech.com
    ```
+   Both Supabase values are public and end up in the built pages. Never put the service role key here.
+3. Database: run [supabase/enhanced-contact-schema.sql](supabase/enhanced-contact-schema.sql) in the Supabase SQL editor (see [supabase/README.md](supabase/README.md)).
+4. `npm run dev` and open http://localhost:3000
 
-   Get your Supabase credentials from:
-   - Supabase Dashboard → Settings → API
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## Database Setup
-
-Make sure you've created the `contact_submissions` table in your Supabase database. Run the SQL script provided in your database setup documentation.
-
-## Project Structure
-
-```
-arisotech-website/
-├── app/
-│   ├── (marketing)/          # Marketing pages
-│   ├── api/                  # API routes
-│   ├── layout.tsx            # Root layout
-│   └── globals.css           # Global styles
-├── components/
-│   ├── ui/                   # Reusable UI components
-│   ├── layout/               # Header, Footer
-│   ├── forms/                # Form components
-│   └── sections/             # Page sections
-├── content/                  # JSON content files
-├── lib/
-│   ├── supabase/             # Supabase clients
-│   └── utils.ts              # Utility functions
-└── types/                    # TypeScript types
-```
-
-## Customization
-
-### Update Content
-
-Edit JSON files in the `content/` directory:
-- `services.json` - Service offerings
-- `portfolio.json` - Portfolio projects
-- `testimonials.json` - Client testimonials
-- `team.json` - Team members
-- `site-config.json` - Site configuration
-
-### Styling
-
-The project uses Tailwind CSS. Modify styles in:
-- Component files (inline Tailwind classes)
-- `app/globals.css` for global styles
-
-## Build for Production
+## Build and deploy
 
 ```bash
 npm run build
-npm start
 ```
 
-## Deployment
+This writes the whole site to `out/` (a postbuild script fixes Next 16's segment file names).
+Upload the contents of `out/` to any static host. There is no server to run.
 
-The easiest way to deploy is using [Vercel](https://vercel.com):
+## Where things live
 
-1. Push your code to GitHub
-2. Import your repository in Vercel
-3. Add your environment variables
-4. Deploy!
-
-## Technologies Used
-
-- **Next.js 14** - React framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Supabase** - Database and backend
-- **React Hook Form** - Form handling
-- **Zod** - Schema validation
-- **Lucide React** - Icons
-
-## License
-
-Private - Arisotech
+- `content/*.json`: site config, modules, pricing
+- `app/`: one folder per page
+- `components/`: layout, home sections, product previews, the demo form
+- `supabase/`: the database schema

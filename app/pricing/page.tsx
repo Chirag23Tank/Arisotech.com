@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import { Check, Minus } from 'lucide-react'
+import { Check, Minus, UsersRound } from 'lucide-react'
 import PageHeader from '@/components/shared/PageHeader'
 import FaqList from '@/components/shared/FaqList'
 import CtaBand from '@/components/shared/CtaBand'
 import PricingPlans from './PricingPlans'
+import { ButtonLink } from '@/components/ui/button'
 import pricing from '@/content/pricing.json'
 import type { PricingPlan } from '@/types'
 import { getBaseUrl } from '@/lib/content'
@@ -27,12 +28,37 @@ export default function PricingPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <p className="mb-6 flex items-start gap-3 rounded-panel border border-paid/30 bg-paid-wash px-5 py-4 text-ink sm:items-center">
+          <UsersRound className="mt-0.5 h-5 w-5 shrink-0 text-paid sm:mt-0" aria-hidden />
+          <span>
+            <strong className="font-bold">No 50-employee minimum.</strong> Pay only for the people you have, from{' '}
+            {pricing.minimumEmployees} employees.
+          </span>
+        </p>
         <PricingPlans
           plans={plans}
           currency={pricing.currency}
           annualDiscountPercent={pricing.annualDiscountPercent}
           minimumEmployees={pricing.minimumEmployees}
         />
+      </section>
+
+      <section aria-labelledby="data-callout" className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
+        <div className="sky-dawn flex flex-col gap-6 rounded-slip p-6 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <span className="rounded-chip bg-white px-2 py-0.5 text-xs font-bold text-brand-strong">New</span>
+            <h2 id="data-callout" className="mt-3 text-2xl font-bold text-ink sm:text-3xl">
+              Your data, your control
+            </h2>
+            <p className="mt-2 max-w-2xl text-ink">
+              Nightly copies to your own S3 or Google Drive from Growth. On Enterprise, use a dedicated database in your
+              region or run Arisotech on your own servers.
+            </p>
+          </div>
+          <ButtonLink href="/#your-data" size="lg" className="shrink-0">
+            See the options
+          </ButtonLink>
+        </div>
       </section>
 
       <section aria-labelledby="compare" className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">

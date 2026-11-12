@@ -1,6 +1,8 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
+import { ChevronRight } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ButtonLink } from '@/components/ui/button'
 import { WordReveal } from '@/components/motion/Reveal'
@@ -21,6 +23,18 @@ export default function Hero() {
       <Clouds />
 
       <div className="relative mx-auto max-w-5xl px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28 lg:pt-32">
+        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
+          <Link
+            href="/#your-data"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 py-1 pl-1 pr-3 text-sm font-medium backdrop-blur hover:bg-white/20"
+          >
+            <span className="rounded-full bg-dawn px-2 py-0.5 text-xs font-bold text-ink">New</span>
+            <span>
+              Your data, your control<span className="hidden sm:inline">: your database, your cloud or your office</span>
+            </span>
+            <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+          </Link>
+        </motion.div>
         <h1 className="text-[2.75rem] font-extrabold leading-[1.02] sm:text-7xl lg:text-[5.5rem]">
           <WordReveal text="Payday, without the month-end scramble." />
         </h1>

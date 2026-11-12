@@ -1,5 +1,4 @@
 {
-  "_note": "PLACEHOLDER PRICES. Confirm all amounts, minimums and inclusions before launch.",
   "currency": "₹",
   "annualDiscountPercent": 15,
   "minimumEmployees": 10,
@@ -7,7 +6,7 @@
     {
       "id": "essentials",
       "name": "Essentials",
-      "pricePerEmployee": 79,
+      "pricePerEmployee": 69,
       "for": "For companies moving off spreadsheets",
       "includes": ["Core HR", "Attendance", "Leave", "Payroll with statutory compliance", "Employee app"],
       "cta": "Start free trial",
@@ -16,9 +15,9 @@
     {
       "id": "growth",
       "name": "Growth",
-      "pricePerEmployee": 129,
+      "pricePerEmployee": 99,
       "for": "For teams with managers, shifts and approvals",
-      "includes": ["Everything in Essentials", "Expenses and advances", "Shifts and rosters", "Biometric and geo-fenced clock-in", "Multi-level approvals", "HR analytics"],
+      "includes": ["Everything in Essentials", "Expenses and advances", "Shifts and rosters", "Biometric and geo-fenced clock-in", "Multi-level approvals", "HR analytics", "Nightly copy of your data to your own cloud"],
       "cta": "Start free trial",
       "highlight": true
     },
@@ -27,7 +26,7 @@
       "name": "Enterprise",
       "pricePerEmployee": null,
       "for": "For multiple entities and custom workflows",
-      "includes": ["Everything in Growth", "Recruitment", "Performance reviews", "Multiple legal entities", "API access and SSO", "Dedicated account manager"],
+      "includes": ["Everything in Growth", "Your own database, cloud or on-premise setup", "Recruitment", "Performance reviews", "Multiple legal entities", "API access and SSO", "Dedicated account manager"],
       "cta": "Talk to sales",
       "highlight": false
     }
@@ -45,7 +44,10 @@
     { "feature": "Recruitment pipeline", "plans": [false, false, true] },
     { "feature": "Goals and performance reviews", "plans": [false, false, true] },
     { "feature": "Multiple legal entities", "plans": [false, false, true] },
-    { "feature": "API access and single sign-on", "plans": [false, false, true] }
+    { "feature": "API access and single sign-on", "plans": [false, false, true] },
+    { "feature": "Nightly copy to your S3 or Google Drive", "plans": [false, true, true] },
+    { "feature": "Dedicated database in your chosen region", "plans": [false, false, true] },
+    { "feature": "Run on your own servers", "plans": [false, false, true] }
   ],
   "faqs": [
     { "question": "How is the bill calculated?", "answer": "You pay per active employee per month. Employees who exit stop counting from the following month." },

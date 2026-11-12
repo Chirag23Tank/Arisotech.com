@@ -11,9 +11,10 @@ import { groupIcons, moduleIcons } from '@/components/product/icons'
 import { cn } from '@/lib/utils'
 
 const links = [
+  { name: 'Your data', href: '/#your-data', isNew: true },
   { name: 'Pricing', href: '/pricing/' },
   { name: 'Solutions', href: '/solutions/' },
-  { name: 'Resources', href: '/blog/' },
+  // Resources (/blog/) is hidden until the first guide is published; add it back here, in Footer and in the sitemap.
   { name: 'About', href: '/about/' },
 ]
 
@@ -22,6 +23,10 @@ const groupBlurb: Record<string, string> = {
   pay: 'Salaries, statutory deductions and reimbursements',
   time: 'Clock-ins, shifts, leave and holidays',
   talent: 'Hiring, goals and reviews',
+}
+
+function NewChip() {
+  return <span className="rounded-chip bg-brand px-1.5 py-0.5 text-[0.7rem] font-bold leading-none text-white">New</span>
 }
 
 function MegaMenu({ onNavigate }: { onNavigate: () => void }) {
@@ -222,9 +227,10 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onMouseEnter={closeSoon}
-                className="rounded-md px-3 py-2 text-[0.95rem] font-medium text-ink hover:bg-paper"
+                className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-[0.95rem] font-medium text-ink hover:bg-paper"
               >
                 {l.name}
+                {l.isNew && <NewChip />}
               </Link>
             ))}
           </div>
@@ -290,8 +296,9 @@ export default function Header() {
               <ul className="mt-2">
                 {links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} onClick={close} className="block border-b border-line py-3 text-lg font-semibold">
+                    <Link href={l.href} onClick={close} className="flex items-center gap-2 border-b border-line py-3 text-lg font-semibold">
                       {l.name}
+                      {l.isNew && <NewChip />}
                     </Link>
                   </li>
                 ))}

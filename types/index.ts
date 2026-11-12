@@ -39,15 +39,3 @@ export interface PricingPlan {
   cta: string
   highlight: boolean
 }
-
-export interface TeamMember {
-  id: string
-  name: string
-  role: string
-  bio?: string
-  image?: string
-  linkedin?: string
-  twitter?: string
-  github?: string
-  order: number
-}

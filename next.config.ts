@@ -11,11 +11,6 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
   reactStrictMode: true,
   poweredByHeader: false,
-  // NEXT_PUBLIC_* values are baked into the static build.
-  env: {
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  },
   experimental: {
     optimizeCss: true,
   },

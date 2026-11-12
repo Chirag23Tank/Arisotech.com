@@ -47,8 +47,9 @@ export default function PricingPlans({
               inputMode="numeric"
               min={1}
               aria-label="Employees"
+              step={1}
               value={headcount}
-              onChange={(e) => setHeadcount(Number(e.target.value))}
+              onChange={(e) => setHeadcount(Math.round(Number(e.target.value)))}
               className="figures h-10 w-24 rounded-lg border border-line-strong px-3 font-semibold"
             />
           </div>
@@ -92,7 +93,7 @@ export default function PricingPlans({
             >
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold">{p.name}</h2>
-                {p.highlight && <span className="rounded-chip bg-brand-wash px-2 py-1 text-xs font-semibold text-brand-strong">Most chosen</span>}
+                {p.highlight && <span className="rounded-chip bg-brand-wash px-2 py-1 text-xs font-semibold text-brand-strong">Recommended</span>}
               </div>
               <p className="mt-1 text-ink-soft">{p.for}</p>
 

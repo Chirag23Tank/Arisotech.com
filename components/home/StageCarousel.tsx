@@ -60,12 +60,12 @@ export default function StageCarousel() {
         className={`relative mt-12 min-h-[26rem] overflow-hidden rounded-slip p-6 text-white transition-[background] duration-700 sm:p-12 ${s.sky}`}
       >
         <Clouds />
-        <div className="relative flex flex-wrap items-center gap-3" role="tablist" aria-label="Company stages">
+        <div className="relative flex flex-wrap items-center gap-3" role="group" aria-label="Company stages">
           {slides.map((sl, i) => (
             <button
               key={sl.stage}
-              role="tab"
-              aria-selected={i === index}
+              type="button"
+              aria-current={i === index ? 'true' : undefined}
               aria-label={sl.stage}
               onClick={() => setIndex(i)}
               className="relative h-1 w-16 overflow-hidden rounded-full bg-white/30 sm:w-24"
@@ -93,8 +93,8 @@ export default function StageCarousel() {
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
-            role="tabpanel"
-            aria-live="polite"
+            // Announce slide changes only when the user drives them, not on every auto-advance.
+            aria-live={auto ? 'off' : 'polite'}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}

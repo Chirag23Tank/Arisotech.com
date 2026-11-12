@@ -9,7 +9,6 @@ const company = [
   { name: 'About', href: '/about/' },
   { name: 'Pricing', href: '/pricing/' },
   { name: 'Solutions', href: '/solutions/' },
-  { name: 'Resources', href: '/blog/' },
   { name: 'Book a demo', href: '/contact/' },
 ]
 

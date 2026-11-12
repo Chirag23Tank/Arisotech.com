@@ -5,6 +5,7 @@ import ModuleScroller from '@/components/home/ModuleScroller'
 import ComplianceBadges from '@/components/home/ComplianceBadges'
 import PayrollMonth from '@/components/home/PayrollMonth'
 import SecurityNight from '@/components/home/SecurityNight'
+import DataControl from '@/components/home/DataControl'
 import StageCarousel from '@/components/home/StageCarousel'
 import EmployeeApp from '@/components/home/EmployeeApp'
 import FaqList from '@/components/shared/FaqList'
@@ -48,6 +49,11 @@ const faqs = [
     answer:
       'Access is controlled by role, every change is logged, and data is encrypted in transit and at rest. You can export your data whenever you want.',
   },
+  {
+    question: 'Can we keep our data on our own servers or cloud?',
+    answer:
+      'Yes. You can use a dedicated database in the region you choose, get a full copy in your own S3 bucket or Google Drive every night, or run Arisotech on your own servers. Talk to us and we will help you pick the right setup.',
+  },
 ]
 
 export default function HomePage() {
@@ -55,6 +61,7 @@ export default function HomePage() {
     <>
       <Hero />
       <WhyArisotech />
+      <DataControl />
       <ModuleScroller modules={tour} />
       <ComplianceBadges />
       <PayrollMonth />

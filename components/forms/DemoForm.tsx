@@ -8,6 +8,7 @@ import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { modules } from '@/lib/content'
+import pricing from '@/content/pricing.json'
 
 const requestTypes = ['demo', 'trial', 'sales'] as const
 const sizes = ['1-50', '51-200', '201-500', '501-1000', '1000-plus'] as const
@@ -24,7 +25,8 @@ const schema = z.object({
   companySize: z.enum(sizes, { message: 'Choose your company size' }),
   timeline: z.enum(timelines).optional().or(z.literal('')),
   modules: z.array(z.string()).optional(),
-  message: z.string().trim().max(5000).optional(),
+  // DB caps message at 5000; leave room for the "Plan: ..." line added on submit.
+  message: z.string().trim().max(4900, 'Keep the message under 4,900 characters').optional(),
 })
 
 type FormValues = z.infer<typeof schema>
@@ -61,7 +63,8 @@ export default function DemoForm() {
     const params = new URLSearchParams(window.location.search)
     const t = params.get('type')
     if (t && (requestTypes as readonly string[]).includes(t)) setRequestType(t as (typeof requestTypes)[number])
-    setPlan(params.get('plan'))
+    const p = params.get('plan')
+    if (pricing.plans.some((x) => x.id === p)) setPlan(p)
   }, [])
 
   const {
@@ -229,8 +232,11 @@ export default function DemoForm() {
           rows={4}
           placeholder="For example: we pay 120 people across two states and use biometric attendance."
           className={`${field} h-auto py-2.5`}
+          aria-invalid={!!errors.message}
+          aria-describedby="message-error"
           {...register('message')}
         />
+        <FieldError id="message-error" message={errors.message?.message} />
       </div>
 
       <Button type="submit" size="lg" disabled={status === 'sending'} className="w-full sm:w-auto">
